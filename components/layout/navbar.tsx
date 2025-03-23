@@ -1,6 +1,6 @@
 "use client";
-import { Building2, Grid2X2, Menu } from "lucide-react";
-import React from "react";
+import { Building2, Grid2X2, Menu, Snowflake, X, ShoppingCart } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -8,6 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "../ui/sheet";
 import { Separator } from "../ui/separator";
 import {
@@ -21,7 +22,6 @@ import {
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { ToggleTheme } from "./toogle-theme";
 
 interface RouteProps {
   href: string;
@@ -35,20 +35,20 @@ interface FeatureProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#portfolio",
-    label: "Portfolio",
+    href: "#produtos",
+    label: "Produtos",
   },
   {
-    href: "#services",
-    label: "Serviços",
+    href: "#benefits",
+    label: "Diferenciais",
   },
   {
-    href: "#about",
-    label: "Sobre",
+    href: "#features",
+    label: "Por Que Nós",
   },
   {
     href: "#contact",
-    label: "Contato",
+    label: "Pedidos",
   },
 ];
 
@@ -71,95 +71,147 @@ const featureList: FeatureProps[] = [
 ];
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full fixed top-0 left-0 right-0 z-40 border-b border-secondary bg-card shadow-sm">
-      <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="font-bold text-lg flex items-center">
-          <Building2 className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-          ARCHSTUDIO
-        </Link>
-
-        {/* <!-- Mobile --> */}
-        <div className="flex items-center lg:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Menu
-                onClick={() => setIsOpen(!isOpen)}
-                className="cursor-pointer lg:hidden"
-              />
-            </SheetTrigger>
-
-            <SheetContent
-              side="left"
-              className="flex flex-col justify-between bg-card border-secondary"
-            >
-              <div>
-                <SheetHeader className="mb-4 ml-4">
-                  <SheetTitle className="flex items-center">
-                    <Link href="/" className="flex items-center">
-                      <Building2 className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                      ArchStudio
-                    </Link>
-                  </SheetTitle>
-                </SheetHeader>
-
-                <div className="flex flex-col gap-2">
-                  {routeList.map(({ href, label }) => (
-                    <Button
-                      key={href}
-                      onClick={() => setIsOpen(false)}
-                      asChild
-                      variant="ghost"
-                      className="justify-start text-base"
-                    >
-                      <Link href={href}>{label}</Link>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-
-              <SheetFooter className="flex-col sm:flex-col justify-start items-start">
-                <Separator className="mb-2" />
-
-                <ToggleTheme />
-              </SheetFooter>
-            </SheetContent>
-          </Sheet>
-        </div>
-
-        {/* <!-- Desktop --> */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <Link
-            href="#portfolio"
-            className="text-base hover:text-primary transition-colors"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href="#services"
-            className="text-base hover:text-primary transition-colors"
-          >
-            Serviços
-          </Link>
-          <Link
-            href="#about"
-            className="text-base hover:text-primary transition-colors"
-          >
-            Sobre
-          </Link>
-          <Link
-            href="#contact"
-            className="text-base hover:text-primary transition-colors"
-          >
-            Contato
+    <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/95 dark:bg-gray-900/95 shadow-md backdrop-blur-sm py-3' 
+        : 'bg-white dark:bg-gray-900 py-5'
+    }`}>
+      <div className="container px-4 mx-auto">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center group">
+            <div className="relative p-1.5 bg-white dark:bg-gray-900 rounded-lg border-2 border-[#29ABE2]/20 group-hover:border-[#29ABE2]/50 transition-all duration-300 mr-3">
+              <Snowflake className="w-10 h-10 text-[#29ABE2] group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#29ABE2]"></div>
+              <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#29ABE2]"></div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-light tracking-wider text-gray-900 dark:text-white">
+                GELO<span className="font-bold text-[#29ABE2]">PREMIUM</span>
+              </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 tracking-wider">QUALIDADE CRISTALINA</span>
+            </div>
           </Link>
 
-          <div className="pl-4 border-l border-muted">
-            <ToggleTheme />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            <NavLink href="#benefits">Benefícios</NavLink>
+            <NavLink href="#features">Diferenciais</NavLink>
+            <NavLink href="#services">Serviços</NavLink>
+            <NavLink href="#portfolio">Produtos</NavLink>
+            <NavLink href="#testimonials">Depoimentos</NavLink>
+            <NavLink href="#contact">Contato</NavLink>
+            
+            <div className="ml-4 flex items-center">
+              <Link href="#contact">
+                <Button className="bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg px-6 py-6 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#29ABE2]/20 flex items-center gap-2 group">
+                  <ShoppingCart className="group-hover:scale-110 transition-transform" />
+                  <span>Pedido Online</span>
+                </Button>
+              </Link>
+            </div>
           </div>
-        </nav>
+
+          {/* Mobile Menu Button - Only visible on mobile */}
+          <div className="block md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-10 w-10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] sm:w-[350px] bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800">
+                <div className="flex flex-col h-full">
+                  <div className="flex-1 py-6 px-2">
+                    <div className="mb-8 flex items-center">
+                      <Snowflake className="h-8 w-8 text-[#29ABE2] mr-2" />
+                      <span className="text-xl font-light text-gray-900 dark:text-white">
+                        GELO<span className="font-bold text-[#29ABE2]">PREMIUM</span>
+                      </span>
+                    </div>
+                    
+                    <div className="flex flex-col space-y-2">
+                      <SheetClose asChild>
+                        <MobileNavLink href="#benefits">Benefícios</MobileNavLink>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <MobileNavLink href="#features">Diferenciais</MobileNavLink>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <MobileNavLink href="#services">Serviços</MobileNavLink>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <MobileNavLink href="#portfolio">Produtos</MobileNavLink>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <MobileNavLink href="#testimonials">Depoimentos</MobileNavLink>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <MobileNavLink href="#contact">Contato</MobileNavLink>
+                      </SheetClose>
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 border-t border-gray-200 dark:border-gray-800">
+                    <SheetClose asChild>
+                      <Link href="#contact">
+                        <Button className="w-full bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg py-5 font-medium transition-all flex items-center justify-center gap-2">
+                          <ShoppingCart className="h-5 w-5" />
+                          <span>Pedido Online</span>
+                        </Button>
+                      </Link>
+                    </SheetClose>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </div>
-    </header>
+    </nav>
+  );
+};
+
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  return (
+    <Link
+      href={href}
+      className="relative px-4 py-3 text-gray-700 dark:text-gray-300 font-medium hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-colors group"
+    >
+      {children}
+      <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-[#29ABE2] group-hover:w-2/3 group-hover:left-[15%] transition-all duration-300"></span>
+    </Link>
+  );
+};
+
+const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  return (
+    <Link
+      href={href}
+      className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-all"
+    >
+      {children}
+    </Link>
   );
 };

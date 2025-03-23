@@ -11,42 +11,42 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "PenTool",
-    title: "Design Personalizado",
+    icon: "Droplets",
+    title: "Pureza Garantida",
     description:
-      "Criamos projetos exclusivos que refletem sua personalidade e atendem às suas necessidades específicas, transformando ideias em espaços funcionais e impressionantes.",
-    color: "bg-amber-50 dark:bg-amber-950/30",
+      "Nosso gelo é produzido com água duplamente filtrada e tratada, garantindo produtos cristalinos, sem impurezas e seguros para o consumo.",
+    color: "bg-blue-50 dark:bg-blue-900/10",
   },
   {
-    icon: "LayoutGrid",
-    title: "Otimização de Espaço",
+    icon: "Timer",
+    title: "Entrega Rápida",
     description:
-      "Aproveitamos cada metro quadrado com soluções inteligentes que maximizam a funcionalidade e o conforto, criando ambientes harmoniosos e práticos.",
-    color: "bg-blue-50 dark:bg-blue-950/30",
+      "Sistema de logística eficiente que garante entregas em até 2 horas após a confirmação do pedido, mantendo o gelo nas condições ideais.",
+    color: "bg-sky-50 dark:bg-sky-900/10",
   },
   {
-    icon: "FileCheck",
-    title: "Conformidade Técnica",
+    icon: "BadgeCheck",
+    title: "Qualidade Superior",
     description:
-      "Garantimos que todos os projetos atendam às normas e regulamentações de construção, evitando problemas futuros e assegurando a aprovação legal dos projetos.",
-    color: "bg-rose-50 dark:bg-rose-950/30",
+      "Equipamentos de última geração que garantem gelo com formato perfeito, densidade ideal e derretimento lento, perfeito para drinks e alimentos.",
+    color: "bg-cyan-50 dark:bg-cyan-900/10",
   },
   {
-    icon: "Leaf",
-    title: "Arquitetura Sustentável",
+    icon: "Package",
+    title: "Embalagem Especial",
     description:
-      "Integramos princípios de sustentabilidade e eficiência energética em nossos projetos, reduzindo o impacto ambiental e proporcionando economia a longo prazo.",
-    color: "bg-emerald-50 dark:bg-emerald-950/30",
+      "Utilizamos embalagens térmicas que preservam o gelo por mais tempo, reduzindo o derretimento durante o transporte e armazenamento.",
+    color: "bg-indigo-50 dark:bg-indigo-900/10",
   },
 ];
 
 export const BenefitsSection = () => {
   return (
-    <section id="benefits" className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="benefits" className="relative py-24 sm:py-32 overflow-hidden bg-gray-50 dark:bg-gray-900/50">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 -z-10 opacity-[0.12] dark:opacity-[0.02]">
+      <div className="absolute inset-0 -z-10 opacity-[0.05]">
         <Image
-          src="/dale.png"
+          src="/ice-texture.png"
           alt=""
           fill
           className="object-cover"
@@ -54,95 +54,80 @@ export const BenefitsSection = () => {
         />
       </div>
 
-      <div className="absolute top-0 left-0 w-1/3 h-full border-r border-primary/5 -z-10" />
-      <div className="absolute top-0 left-1/3 w-1/3 h-full border-r border-primary/5 -z-10" />
-      <div className="absolute top-0 left-2/3 w-1/3 h-full border-r border-primary/5 -z-10" />
-
-      <div className="container">
-        {/* Header with diagonal accent line */}
-        <div className="relative mb-20">
-          <div className="absolute w-24 h-[1px] bg-primary top-1/2 -left-32 hidden xl:block" />
-
-          <h2 className="text-lg text-primary mb-2 tracking-wider font-light">
-            NOSSOS BENEFÍCIOS
+      <div className="container px-4 mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
+            Nossos Diferenciais
           </h2>
-
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold max-w-2xl leading-tight">
-              Vantagens de Contratar Nosso
-              <br />
-              <span className="text-primary relative">
-                Estúdio de Arquitetura
-                <span className="absolute -bottom-3 left-0 w-full h-[2px] bg-primary/20"></span>
-              </span>
-            </h2>
-
-            <p className="text-base text-muted-foreground max-w-md">
-              Nosso estúdio combina criatividade, expertise técnica e atenção
-              aos detalhes para transformar sua visão em espaços excepcionais
-              que superam suas expectativas.
-            </p>
-          </div>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Vantagens de Escolher <span className="text-[#29ABE2]">Nosso Gelo Premium</span>
+          </h3>
+          <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            Nossa fábrica combina tecnologia avançada e processos rigorosos de controle 
+            de qualidade para entregar o melhor gelo da região com rapidez e excelência.
+          </p>
         </div>
 
         {/* Benefits grid with more creative layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefitList.map(({ icon, title, description, color }, index) => (
             <div
               key={title}
-              className={`group relative rounded-md transition-all duration-300 ${color} border border-black/5 dark:border-white/5 p-6 pt-12 h-full hover:shadow-xl hover:-translate-y-1`}
+              className={`group relative rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-800 p-6 pt-12 h-full hover:shadow-xl hover:-translate-y-1 bg-white dark:bg-gray-800`}
             >
+              {/* Accent color top border */}
+              <div className={`absolute top-0 left-0 right-0 h-1.5 bg-[#29ABE2]`}></div>
+              
               {/* Numbered tag */}
-              <div className="absolute top-0 right-0 bg-white dark:bg-black border border-black/5 dark:border-white/10 text-xs font-medium py-1 px-3 rounded-bl-md rounded-tr-md tracking-widest">
+              <div className="absolute top-3 right-3 bg-[#29ABE2]/10 text-[#29ABE2] text-xs font-medium py-1 px-2 rounded tracking-wider">
                 {index + 1 < 10 ? `0${index + 1}` : index + 1}
               </div>
 
               {/* Icon with decorative elements */}
-              <div className="mb-6 relative">
-                <div className="absolute w-8 h-8 -top-3 -left-3 border-t border-l border-primary/20"></div>
+              <div className={`mb-6 relative ${color} p-3 inline-flex rounded-lg`}>
                 <Icon
+                  color="#29ABE2"
                   name={icon as keyof typeof icons}
-                  size={36}
-                  color="hsl(var(--primary))"
-                  className="text-primary"
+                  size={32}
+                  className="text-[#29ABE2]"
                 />
-                <div className="absolute w-8 h-8 -bottom-3 -right-3 border-b border-r border-primary/20"></div>
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3 group-hover:text-[#29ABE2] transition-colors">
                 {title}
               </h3>
 
-              <p className="text-muted-foreground text-sm">{description}</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">{description}</p>
 
-              {/* Hover indicator */}
-              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.5 11.5L11.5 3.5M11.5 3.5H6.5M11.5 3.5V8.5"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              {/* Bottom decorative element */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#29ABE2] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </div>
           ))}
         </div>
 
-        {/* Optional measuring line decoration */}
-        <div className="w-full h-12 relative mt-20">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/10"></div>
-          <div className="absolute top-0 left-1/4 h-3 w-[1px] bg-primary/30"></div>
-          <div className="absolute top-0 left-2/4 h-3 w-[1px] bg-primary/30"></div>
-          <div className="absolute top-0 left-3/4 h-3 w-[1px] bg-primary/30"></div>
+        {/* Feature highlight */}
+        <div className="mt-20 bg-[#29ABE2]/5 rounded-lg p-8 border border-[#29ABE2]/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Produção <span className="text-[#29ABE2]">Sustentável</span></h3>
+              <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
+                Nosso processo de produção é otimizado para reduzir o consumo de água e energia, 
+                contribuindo para a preservação do meio ambiente sem comprometer a qualidade.
+              </p>
+            </div>
+            <div>
+              <Image 
+                src="/gelo-hero.jpg" 
+                alt="Produção sustentável" 
+                width={670} 
+                height={700} 
+                className="rounded-lg object-cover" 
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Building2, Clock, Mail, Phone } from "lucide-react";
+import { Building2, Clock, Mail, Phone, MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,13 +27,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
+import Image from "next/image";
 
 const formSchema = z.object({
-  firstName: z.string().min(2).max(255),
-  lastName: z.string().min(2).max(255),
-  email: z.string().email(),
-  subject: z.string().min(2).max(255),
-  message: z.string(),
+  firstName: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
+  lastName: z.string().min(2, "Sobrenome deve ter pelo menos 2 caracteres"),
+  email: z.string().email("Email inválido"),
+  subject: z.string().min(1, "Selecione um tipo de gelo"),
+  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
 });
 
 export const ContactSection = () => {
@@ -43,127 +45,136 @@ export const ContactSection = () => {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Projeto Residencial",
+      subject: "Pedido de Gelo em Cubo",
       message: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const { firstName, lastName, email, subject, message } = values;
-    console.log(values);
-
-    const mailToLink = `mailto:enzolozano.dev@gmail.com?subject=${subject}&body=Olá, sou ${firstName} ${lastName}, meu email é ${email}. %0D%0A${message}`;
-
-    window.location.href = mailToLink;
+    
+    const whatsappMessage = `Olá! Sou ${firstName} ${lastName} (${email}) e gostaria de fazer um pedido: ${subject}. ${message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    window.open(`https://wa.me/5585991124238?text=${encodedMessage}`, '_blank');
   }
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Background grid elements */}
-      <div className="absolute top-0 left-0 w-1/3 h-full border-r border-primary/5 -z-10" />
-      <div className="absolute top-0 left-1/3 w-1/3 h-full border-r border-primary/5 -z-10" />
-      <div className="absolute top-0 left-2/3 w-1/3 h-full border-r border-primary/5 -z-10" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-primary/5" />
-
-      <div className="container mx-auto">
-        <div className="relative mb-16">
-          <div className="absolute w-24 h-[1px] bg-primary top-1/2 -left-32 hidden xl:block" />
-
-          <h2 className="text-lg text-primary mb-2 tracking-wider font-light">
-            CONTATO
+    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden bg-white dark:bg-gray-900">
+      {/* Background pattern */}
+      <div className="absolute inset-0 -z-10 opacity-[0.03]">
+        <Image
+          src="/ice-pattern.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+      
+      <div className="container px-4 mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
+            ENTRE EM CONTATO
           </h2>
-
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold max-w-2xl leading-tight">
-              Vamos Transformar Sua{" "}
-              <span className="text-primary relative">
-                Visão em Realidade
-                <span className="absolute -bottom-3 left-0 w-full h-[2px] bg-primary/20"></span>
-              </span>
-            </h2>
-
-            <p className="text-base text-muted-foreground max-w-md">
-              Estamos prontos para ouvir suas ideias e transformá-las em espaços
-              excepcionais que unem funcionalidade, estética e propósito.
-            </p>
-          </div>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Faça seu <span className="text-[#29ABE2]">Pedido de Gelo</span>
+          </h3>
+          <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            Entrega rápida para toda a região. Pedido mínimo de 5kg, com descontos
+            para pedidos maiores. Atendemos eventos, bares, restaurantes e residências.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="relative">
-            {/* Decorative corner elements */}
-            <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-primary/20"></div>
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-primary/20"></div>
-
+          <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-8 hover:shadow-md transition-all duration-300">
+            {/* Accent color top border */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#29ABE2]"></div>
+            
             <div className="mb-8">
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Entre em contato para discutir seu projeto arquitetônico,
-                solicitar um orçamento ou agendar uma consulta inicial com nossa
-                equipe. Estamos ansiosos para colaborar em seu próximo espaço.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                Peça seu gelo de forma rápida e conveniente pelo WhatsApp. Basta clicar no botão 
+                abaixo ou preencher o formulário para enviarmos uma mensagem personalizada.
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="flex items-start">
-                <div className="p-3 bg-primary/5 rounded-md mr-4">
-                  <Building2 className="text-primary h-5 w-5" />
+                <div className="p-3 bg-[#29ABE2]/10 rounded-lg mr-4">
+                  <Building2 className="text-[#29ABE2] h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-medium mb-1">Escritório</div>
-                  <div className="text-muted-foreground">
-                    Avenida Paulista, 1578
+                  <div className="font-medium mb-1">Fábrica</div>
+                  <div className="text-gray-500 dark:text-gray-400">
+                    Rua do Gelo Cristalino, 123
                     <br />
-                    São Paulo, SP 01310-200
+                    Fortaleza, CE 60000-000
                   </div>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="p-3 bg-primary/5 rounded-md mr-4">
-                  <Phone className="text-primary h-5 w-5" />
+                <div className="p-3 bg-[#29ABE2]/10 rounded-lg mr-4">
+                  <Phone className="text-[#29ABE2] h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-medium mb-1">Telefone</div>
-                  <div className="text-muted-foreground">
-                    +55 (11) 3456-7890
+                  <div className="font-medium mb-1">WhatsApp</div>
+                  <div className="text-gray-500 dark:text-gray-400">
+                    +55 (85) 99112-4238
                   </div>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="p-3 bg-primary/5 rounded-md mr-4">
-                  <Mail className="text-primary h-5 w-5" />
+                <div className="p-3 bg-[#29ABE2]/10 rounded-lg mr-4">
+                  <Mail className="text-[#29ABE2] h-5 w-5" />
                 </div>
                 <div>
                   <div className="font-medium mb-1">Email</div>
-                  <div className="text-muted-foreground">
-                    contato@studiodearquitetura.com
+                  <div className="text-gray-500 dark:text-gray-400">
+                    contato@gelopremium.com
                   </div>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="p-3 bg-primary/5 rounded-md mr-4">
-                  <Clock className="text-primary h-5 w-5" />
+                <div className="p-3 bg-[#29ABE2]/10 rounded-lg mr-4">
+                  <Clock className="text-[#29ABE2] h-5 w-5" />
                 </div>
                 <div>
                   <div className="font-medium mb-1">Horário de Atendimento</div>
-                  <div className="text-muted-foreground">
-                    Segunda - Sexta: 9h às 18h
+                  <div className="text-gray-500 dark:text-gray-400">
+                    Segunda - Sábado: 7h às 22h
                     <br />
-                    Sábado: 9h às 13h (com agendamento)
+                    Domingo: 9h às 18h
                   </div>
                 </div>
               </div>
+              
+              <Button 
+                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2 py-6 rounded-md transition-all group shadow-lg hover:shadow-xl"
+                asChild
+              >
+                <Link href="https://wa.me/5585991124238">
+                  <MessageSquare className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <span className="relative">
+                    Pedir pelo WhatsApp
+                    <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </span>
+                </Link>
+              </Button>
             </div>
           </div>
 
-          <Card className="bg-white/5 dark:bg-black/20 backdrop-blur-sm border border-primary/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+          <Card className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 relative overflow-hidden">
+            {/* Accent color top border */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#29ABE2]"></div>
 
             <CardHeader className="pt-8">
-              <h3 className="text-xl font-medium tracking-wide">
-                Envie-nos uma mensagem
+              <h3 className="text-xl font-bold">
+                Formulário de pedido
               </h3>
             </CardHeader>
 
@@ -186,7 +197,7 @@ export const ContactSection = () => {
                             <Input
                               placeholder="Maria"
                               {...field}
-                              className="border-primary/20 focus:border-primary/40 bg-transparent"
+                              className="border-gray-200 focus:border-[#29ABE2] focus:ring-[#29ABE2]/20 bg-transparent dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage />
@@ -205,7 +216,7 @@ export const ContactSection = () => {
                             <Input
                               placeholder="Silva"
                               {...field}
-                              className="border-primary/20 focus:border-primary/40 bg-transparent"
+                              className="border-gray-200 focus:border-[#29ABE2] focus:ring-[#29ABE2]/20 bg-transparent dark:border-gray-700"
                             />
                           </FormControl>
                           <FormMessage />
@@ -226,7 +237,7 @@ export const ContactSection = () => {
                           <Input
                             type="email"
                             placeholder="maria.silva@exemplo.com"
-                            className="border-primary/20 focus:border-primary/40 bg-transparent"
+                            className="border-gray-200 focus:border-[#29ABE2] focus:ring-[#29ABE2]/20 bg-transparent dark:border-gray-700"
                             {...field}
                           />
                         </FormControl>
@@ -241,30 +252,32 @@ export const ContactSection = () => {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-sm font-medium">
-                          Tipo de Projeto
+                          Tipo de Gelo
                         </FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="border-primary/20 focus:border-primary/40 bg-transparent">
-                              <SelectValue placeholder="Selecione um tipo de projeto" />
+                            <SelectTrigger className="border-gray-200 focus:border-[#29ABE2] focus:ring-[#29ABE2]/20 bg-transparent dark:border-gray-700">
+                              <SelectValue placeholder="Selecione o tipo de gelo" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="Projeto Residencial">
-                              Projeto Residencial
+                            <SelectItem value="Pedido de Gelo em Cubo">
+                              Gelo em Cubo
                             </SelectItem>
-                            <SelectItem value="Projeto Comercial">
-                              Projeto Comercial
+                            <SelectItem value="Pedido de Gelo em Escama">
+                              Gelo em Escama
                             </SelectItem>
-                            <SelectItem value="Reforma">Reforma</SelectItem>
-                            <SelectItem value="Design de Interiores">
-                              Design de Interiores
+                            <SelectItem value="Pedido de Gelo em Bala">
+                              Gelo em Bala
                             </SelectItem>
-                            <SelectItem value="Consultoria">
-                              Consultoria
+                            <SelectItem value="Pedido de Gelo em Bloco">
+                              Gelo em Bloco
+                            </SelectItem>
+                            <SelectItem value="Pedido de Gelo Misto">
+                              Gelo Misto
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -279,13 +292,13 @@ export const ContactSection = () => {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-sm font-medium">
-                          Mensagem
+                          Detalhes do Pedido
                         </FormLabel>
                         <FormControl>
                           <Textarea
                             rows={5}
-                            placeholder="Descreva seu projeto, necessidades e questões..."
-                            className="resize-none border-primary/20 focus:border-primary/40 bg-transparent"
+                            placeholder="Informe a quantidade, horário de entrega desejado e endereço..."
+                            className="resize-none border-gray-200 focus:border-[#29ABE2] focus:ring-[#29ABE2]/20 bg-transparent dark:border-gray-700"
                             {...field}
                           />
                         </FormControl>
@@ -296,45 +309,41 @@ export const ContactSection = () => {
 
                   <Button
                     type="submit"
-                    className="w-full md:w-auto !bg-primary hover:!bg-primary/90 text-white py-6 px-8 mt-4 rounded-md transition-all shadow-lg hover:shadow-xl group"
+                    className="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white py-6 px-8 mt-4 rounded-md transition-all shadow-lg hover:shadow-xl group flex items-center justify-center"
                   >
-                    Enviar Mensagem
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 15 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ml-2 group-hover:translate-x-1 transition-transform"
-                    >
-                      <path
-                        d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                        fill="currentColor"
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    <MessageSquare className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    <span className="relative">
+                      Enviar pedido via WhatsApp
+                      <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </span>
                   </Button>
                 </form>
               </Form>
             </CardContent>
 
             <CardFooter className="pt-0">
-              <div className="w-full h-px bg-primary/10 my-4"></div>
-              <p className="text-xs text-muted-foreground text-center w-full">
-                Ao enviar este formulário, você concorda com nossa política de
-                privacidade.
+              <div className="w-full h-px bg-gray-200 dark:bg-gray-700 my-4"></div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center w-full">
+                Pedido mínimo de 5kg. Entrega em até 2 horas após confirmação.
               </p>
             </CardFooter>
           </Card>
         </div>
 
-        {/* Optional measuring line decoration */}
-        <div className="w-full h-12 relative mt-20">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/10"></div>
-          <div className="absolute top-0 left-1/4 h-3 w-[1px] bg-primary/30"></div>
-          <div className="absolute top-0 left-2/4 h-3 w-[1px] bg-primary/30"></div>
-          <div className="absolute top-0 left-3/4 h-3 w-[1px] bg-primary/30"></div>
+        {/* Trust indicators */}
+        <div className="mt-16 flex flex-wrap justify-center gap-8 bg-[#29ABE2]/5 rounded-lg p-6 border border-[#29ABE2]/20 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-xl font-bold text-[#29ABE2] mb-1">Entregas rápidas</div>
+            <p className="text-sm text-gray-500">Em até 2 horas após confirmação</p>
+          </div>
+          <div className="text-center">
+            <div className="text-xl font-bold text-[#29ABE2] mb-1">Gelo de qualidade</div>
+            <p className="text-sm text-gray-500">Água purificada e filtrada</p>
+          </div>
+          <div className="text-center">
+            <div className="text-xl font-bold text-[#29ABE2] mb-1">Pedido mínimo</div>
+            <p className="text-sm text-gray-500">Apenas 5kg para residências</p>
+          </div>
         </div>
       </div>
     </section>

@@ -13,29 +13,29 @@ import { TestimonialSection } from "@/components/layout/sections/testimonial";
 import { PortfolioSection } from "@/components/layout/sections/portfolio";
 
 export const metadata = {
-  title: "Landing template",
-  description: "Free Shadcn landing page for developers",
+  title: "Gelo Premium - Entrega Rápida",
+  description: "Fornecedor de gelo premium com entrega rápida para residências, eventos e estabelecimentos comerciais.",
   openGraph: {
     type: "website",
-    url: "https://github.com",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    url: "https://gelopremium.com",
+    title: "Gelo Premium - Qualidade e Rapidez na Entrega",
+    description: "Gelo cristalino de alta qualidade para todos os tipos de eventos e estabelecimentos.",
     images: [
       {
-        url: "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
+        url: "https://gelopremium.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Shadcn - Landing template",
+        alt: "Gelo Premium - Fornecedor de Gelo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://github.com",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    site: "https://gelopremium.com",
+    title: "Gelo Premium - Qualidade e Rapidez",
+    description: "Fornecedor de gelo premium com entrega rápida",
     images: [
-      "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
+      "https://gelopremium.com/twitter-image.jpg",
     ],
   },
 };
@@ -45,12 +45,12 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <PortfolioSection />
-      <SponsorsSection />
-      <ContactSection />
       <BenefitsSection />
       <FeaturesSection />
+      <SponsorsSection />
       <ServicesSection />
       <TestimonialSection />
+      <ContactSection />
       <FAQSection />
       <FooterSection />
     </main>
