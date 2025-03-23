@@ -129,7 +129,7 @@ export const TestimonialSection = () => {
                   
                   {/* Comment */}
                   <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
-                    "{review.comment}"
+                    {review.comment}
                   </p>
                   
                   {/* User info */}
