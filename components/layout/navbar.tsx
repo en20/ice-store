@@ -210,6 +210,14 @@ const MobileNavLink = ({ href, children }: { href: string; children: React.React
     <Link
       href={href}
       className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-all"
+      onClick={() => {
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }}
     >
       {children}
     </Link>
