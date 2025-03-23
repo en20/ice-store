@@ -72,6 +72,7 @@ const featureList: FeatureProps[] = [
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -134,7 +135,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button - Only visible on mobile */}
           <div className="block md:hidden">
-            <Sheet>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-10 w-10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
                   <Menu className="h-6 w-6" />
@@ -152,36 +153,22 @@ export const Navbar = () => {
                     </div>
                     
                     <div className="flex flex-col space-y-2">
-                      <SheetClose asChild>
-                        <MobileNavLink href="#benefits">Benefícios</MobileNavLink>
-                      </SheetClose>
-                      <SheetClose asChild>
-                        <MobileNavLink href="#features">Diferenciais</MobileNavLink>
-                      </SheetClose>
-                      <SheetClose asChild>
-                        <MobileNavLink href="#services">Serviços</MobileNavLink>
-                      </SheetClose>
-                      <SheetClose asChild>
-                        <MobileNavLink href="#portfolio">Produtos</MobileNavLink>
-                      </SheetClose>
-                      <SheetClose asChild>
-                        <MobileNavLink href="#testimonials">Depoimentos</MobileNavLink>
-                      </SheetClose>
-                      <SheetClose asChild>
-                        <MobileNavLink href="#contact">Contato</MobileNavLink>
-                      </SheetClose>
+                      <MobileNavLink href="#benefits" closeMenu={() => setMobileMenuOpen(false)}>Benefícios</MobileNavLink>
+                      <MobileNavLink href="#features" closeMenu={() => setMobileMenuOpen(false)}>Diferenciais</MobileNavLink>
+                      <MobileNavLink href="#services" closeMenu={() => setMobileMenuOpen(false)}>Serviços</MobileNavLink>
+                      <MobileNavLink href="#portfolio" closeMenu={() => setMobileMenuOpen(false)}>Produtos</MobileNavLink>
+                      <MobileNavLink href="#testimonials" closeMenu={() => setMobileMenuOpen(false)}>Depoimentos</MobileNavLink>
+                      <MobileNavLink href="#contact" closeMenu={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
                     </div>
                   </div>
                   
                   <div className="p-4 border-t border-gray-200 dark:border-gray-800">
-                    <SheetClose asChild>
-                      <Link href="#contact">
-                        <Button className="w-full bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg py-5 font-medium transition-all flex items-center justify-center gap-2">
-                          <ShoppingCart className="h-5 w-5" />
-                          <span>Pedido Online</span>
-                        </Button>
-                      </Link>
-                    </SheetClose>
+                    <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                      <Button className="w-full bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg py-5 font-medium transition-all flex items-center justify-center gap-2">
+                        <ShoppingCart className="h-5 w-5" />
+                        <span>Pedido Online</span>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </SheetContent>
@@ -205,12 +192,21 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
   );
 };
 
-const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+const MobileNavLink = ({ 
+  href, 
+  children, 
+  closeMenu 
+}: { 
+  href: string; 
+  children: React.ReactNode;
+  closeMenu: () => void;
+}) => {
   return (
     <Link
       href={href}
       className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-all"
       onClick={() => {
+        closeMenu();
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
