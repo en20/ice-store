@@ -14,34 +14,29 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Qual é o prazo de entrega do gelo?",
-    answer: "Realizamos entregas em até 2 horas após a confirmação do pedido para regiões dentro do nosso raio de atendimento. Para eventos agendados, garantimos a entrega no horário especificado com pelo menos 30 minutos de antecedência para assegurar que tudo esteja perfeito.",
+    question: "Como funciona a garantia de cobrir orçamento?",
+    answer: "Apresente o orçamento formal válido de um concorrente local para gelo em escama e COBRIMOS QUALQUER ORÇAMENTO para o mesmo produto e condições.",
     value: "item-1",
   },
   {
-    question: "Qual é o pedido mínimo para entrega?",
-    answer: "Para entregas residenciais, o pedido mínimo é de 5kg de gelo. Para estabelecimentos comerciais e eventos, não há quantidade mínima estabelecida, mas oferecemos condições especiais para pedidos acima de 50kg.",
+    question: "Vocês realizam entrega?",
+    answer: "Não. No momento, nosso serviço é focado na qualidade e no melhor preço, sendo exclusivo para retirada em nossa unidade em Maracanaú.",
     value: "item-2",
   },
   {
-    question: "Quais tipos de gelo vocês oferecem?",
-    answer: "Oferecemos diversos tipos de gelo: em cubo (tradicional e gourmet), em escama (ideal para exposição de alimentos), em bala (perfeito para drinks), em bloco (para esculturas e resfriamento prolongado) e gelo seco para efeitos especiais em eventos.",
+    question: "Como faço para pedir?",
+    answer: "É muito simples! Nossos pedidos e orçamentos são feitos exclusivamente via WhatsApp. Clique no botão em nosso site ou adicione nosso número (85) 98435-3984 e fale conosco.",
     value: "item-3",
   },
   {
-    question: "Como é calculado o valor da entrega?",
-    answer: "O frete é calculado com base na distância e volume do pedido. Para regiões centrais, oferecemos entrega gratuita em pedidos acima de 20kg. Para outras regiões, o valor é informado antes da confirmação do pedido. Clientes com contrato de fornecimento regular têm condições especiais.",
+    question: "Qual o horário para retirada?",
+    answer: "Estamos abertos para retirada de Segunda a Sexta, das 08:00 às 18:00, e aos Sábados, das 08:00 às 12:00. Domingos somos fechados.",
     value: "item-4",
   },
   {
-    question: "O gelo de vocês é seguro para consumo direto?",
-    answer: "Sim, todo nosso gelo é produzido com água duplamente filtrada e tratada, seguindo rigorosos padrões de segurança alimentar. Nosso processo de produção atende às normas da ANVISA para gelo comestível, sendo completamente seguro para uso em bebidas e contato direto com alimentos.",
+    question: "Vocês vendem gelo em cubo ou outros tipos?",
+    answer: "Não. Somos especialistas em Gelo em Escama, garantindo a máxima qualidade e eficiência para conservação e resfriamento rápido, que são os pontos fortes deste tipo de gelo.",
     value: "item-5",
-  },
-  {
-    question: "Vocês fornecem gelo para eventos de grande porte?",
-    answer: "Sim, temos capacidade para atender eventos de qualquer escala. Para eventos grandes, recomendamos agendamento com pelo menos 3 dias de antecedência. Oferecemos também serviço de consultoria para calcular a quantidade ideal de gelo conforme o tipo de evento, número de convidados e duração.",
-    value: "item-6",
   },
 ];
 
@@ -69,7 +64,7 @@ export const FAQSection = () => {
             PERGUNTAS FREQUENTES
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            Esclarecendo Suas <span className="text-[#29ABE2]">Dúvidas</span>
+            Perguntas Frequentes
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">

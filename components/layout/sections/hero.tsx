@@ -33,7 +33,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
           src={imagePath}
-          alt="Gelo cristalino e refrescante"
+          alt="Gelo em escama de alta qualidade"
           fill
           priority
           className="object-cover"
@@ -75,11 +75,10 @@ export const HeroSection = () => {
             </div>
 
             {/* Main title */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
-              <span className="block">Gelo </span>
-              <span className="block">puro e </span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
+              <span className="block">GELO EM ESCAMA</span>
               <span className="block relative">
-                cristalino
+                Preço baixo, alta qualidade.
                 <svg
                   className="absolute -bottom-4 -left-20 w-full md:-left-56"
                   height="8"
@@ -97,9 +96,11 @@ export const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-xl text-white/80 my-6 font-light leading-relaxed">
-              Oferecemos gelo de alta qualidade para eventos, bares, restaurantes e 
-              uso doméstico com entrega rápida diretamente para você.
+            <p className="text-md text-white/80 my-6 font-light leading-relaxed">
+              A Pescgelo é sua especialista em Gelo em Escama em Maracanaú. Ideal para 
+              conservação superior de pescados, bebidas e eventos. Garantimos o melhor negócio: 
+              <span className="font-bold text-white"> COBRIMOS QUALQUER ORÇAMENTO.</span>
+              <span className="block mt-2 text-md italic">(Serviço exclusivo para retirada no local)</span>
             </p>
 
             {/* Action buttons */}
@@ -109,8 +110,8 @@ export const HeroSection = () => {
                 className="bg-white text-[#29ABE2] hover:bg-white/90 font-medium rounded-md px-8 group"
                 asChild
               >
-                <Link href="#produtos">
-                  Nossos produtos
+                <Link href="https://wa.me/5585991124238">
+                  Solicite seu Orçamento via WhatsApp
                   <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -120,8 +121,8 @@ export const HeroSection = () => {
                 className="border-white text-white bg-transparent border hover:bg-white hover:text-[#29ABE2] font-medium rounded-md px-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg group"
                 asChild
               >
-                <Link href="https://wa.me/5585991124238">
-                  Faça seu pedido
+                <Link href="#produto">
+                  Conheça as Vantagens do Gelo em Escama
                   <ArrowRight className="ml-2 size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                 </Link>
               </Button>

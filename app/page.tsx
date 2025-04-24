@@ -11,48 +11,25 @@ import { SponsorsSection } from "@/components/layout/sections/sponsors";
 import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
 import { PortfolioSection } from "@/components/layout/sections/portfolio";
+import { ProductSection } from "@/components/layout/sections/product";
+import { AboutSection } from "@/components/layout/sections/about";
 
-export const metadata = {
-  title: "Gelo Premium - Entrega Rápida",
-  description: "Fornecedor de gelo premium com entrega rápida para residências, eventos e estabelecimentos comerciais.",
-  openGraph: {
-    type: "website",
-    url: "https://gelopremium.com",
-    title: "Gelo Premium - Qualidade e Rapidez na Entrega",
-    description: "Gelo cristalino de alta qualidade para todos os tipos de eventos e estabelecimentos.",
-    images: [
-      {
-        url: "https://gelopremium.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Gelo Premium - Fornecedor de Gelo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "https://gelopremium.com",
-    title: "Gelo Premium - Qualidade e Rapidez",
-    description: "Fornecedor de gelo premium com entrega rápida",
-    images: [
-      "https://gelopremium.com/twitter-image.jpg",
-    ],
-  },
-};
+
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <PortfolioSection />
+      <ProductSection />
+      {/*<PortfolioSection />*/}
       <BenefitsSection />
-      <FeaturesSection />
-      <SponsorsSection />
-      <ServicesSection />
+      <AboutSection />
       <TestimonialSection />
+      {/*<FeaturesSection />*/}
+      {/*<SponsorsSection />*/}
+      {/*<ServicesSection />*/}
       <ContactSection />
       <FAQSection />
-      <FooterSection />
     </main>
   );
 }

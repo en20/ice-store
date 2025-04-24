@@ -20,52 +20,28 @@ interface ReviewProps {
 
 const reviewList: ReviewProps[] = [
   {
-    image: "/avatars/client1.jpg",
-    name: "Carlos Mendoza",
-    userName: "Cliente Residencial",
-    comment:
-      "Excelente atendimento e rapidez na entrega. O gelo chegou exatamente no horário combinado e com a qualidade impecável. Recomendo a todos que precisam de gelo para eventos.",
-    rating: 5.0,
-  },
-  {
-    image: "/avatars/client2.jpg",
-    name: "Maria Santos",
+    image: "/business-icons/restaurant.jpg",
+    name: "Ana Paula Oliveira",
     userName: "Proprietária de Restaurante",
     comment:
-      "Temos uma parceria há mais de 2 anos e o fornecimento nunca falhou. A qualidade do gelo é superior e nossos clientes sempre elogiam os drinks que servimos com ele.",
-    rating: 4.8,
+      "A qualidade do gelo em escama da Pescgelo é excelente para manter nosso buffet sempre fresco e as bebidas na temperatura ideal. O preço competitivo e a facilidade de retirar em Maracanaú ajudam muito na nossa logística diária.",
+    rating: 5.0,
   },
   {
-    image: "/avatars/client3.jpg",
-    name: "Roberto Chen",
+    image: "/business-icons/fish-market.jpg",
+    name: "Marcos Costa",
+    userName: "Comerciante de Pescados",
+    comment:
+      "Para minha peixaria, a conservação é tudo. O gelo em escama da Pescgelo é soltinho e mantém o pescado perfeito por mais tempo. Além da qualidade, o fato de cobrirem orçamentos faz toda a diferença nos custos.",
+    rating: 4.9,
+  },
+  {
+    image: "/business-icons/event-venue.jpg",
+    name: "Ricardo Lima",
     userName: "Organizador de Eventos",
     comment:
-      "Contratamos para um festival gastronômico e ficamos impressionados com a organização. Mesmo com a grande demanda, o serviço foi impecável e o gelo manteve a qualidade até o final.",
-    rating: 4.9,
-  },
-  {
-    image: "/avatars/client4.jpg",
-    name: "Elena Kowalski",
-    userName: "Proprietária de Bar",
-    comment:
-      "A escultura de gelo que encomendamos para a inauguração do nosso bar foi deslumbrante. Um diferencial que impressionou todos os convidados. Certamente faremos mais pedidos.",
+      "Nos eventos que organizo, preciso de grande volume de gelo e confiança no fornecedor. A Pescgelo nunca falha na qualidade e quantidade, com preço justo e a retirada é prática aqui em Maracanaú, facilitando nossa operação.",
     rating: 5.0,
-  },
-  {
-    image: "/avatars/client5.jpg",
-    name: "Tiago Pereira",
-    userName: "Cliente Residencial",
-    comment:
-      "O serviço de entrega residencial é muito prático. Faço pedidos regularmente para festas em casa e sempre recebo um produto de excelente qualidade. O aplicativo para pedidos é muito intuitivo.",
-    rating: 5.0,
-  },
-  {
-    image: "/avatars/client6.jpg",
-    name: "Sofia Rodriguez",
-    userName: "Gerente de Hotel",
-    comment:
-      "A parceria com a empresa melhorou muito nossa operação de hospedagem. Temos fornecimento diário e isso garante que nossos hóspedes sempre tenham gelo de qualidade disponível.",
-    rating: 4.9,
   },
 ];
 
@@ -90,7 +66,7 @@ export const TestimonialSection = () => {
             Depoimentos de Clientes
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            O Que Nossos <span className="text-[#29ABE2]">Clientes Dizem</span>
+            A Experiência de <span className="text-[#29ABE2]">Nossos Clientes</span>
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
@@ -157,22 +133,6 @@ export const TestimonialSection = () => {
           <CarouselPrevious className="border border-gray-200 hover:bg-[#29ABE2] hover:text-white hover:border-[#29ABE2] -left-4" />
           <CarouselNext className="border border-gray-200 hover:bg-[#29ABE2] hover:text-white hover:border-[#29ABE2] -right-4" />
         </Carousel>
-        
-        {/* Trust indicators */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#29ABE2] mb-1">500+</div>
-            <p className="text-sm text-gray-500">Clientes Satisfeitos</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#29ABE2] mb-1">4.9</div>
-            <p className="text-sm text-gray-500">Avaliação Média</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#29ABE2] mb-1">12</div>
-            <p className="text-sm text-gray-500">Anos de Experiência</p>
-          </div>
-        </div>
       </div>
     </section>
   );

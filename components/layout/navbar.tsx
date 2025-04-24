@@ -1,5 +1,5 @@
 "use client";
-import { Building2, Grid2X2, Menu, Snowflake, X, ShoppingCart } from "lucide-react";
+import { Building2, Grid2X2, Menu, X, ShoppingCart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import {
   Sheet,
@@ -99,32 +99,37 @@ export const Navbar = () => {
     }`}>
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with image and text */}
           <Link href="/" className="flex items-center group">
             <div className="relative p-1.5 bg-white dark:bg-gray-900 rounded-lg border-2 border-[#29ABE2]/20 group-hover:border-[#29ABE2]/50 transition-all duration-300 mr-3">
-              <Snowflake className="w-10 h-10 text-[#29ABE2] group-hover:scale-110 transition-transform duration-300" />
+              <Image 
+                src="/pescgelo.jpg" 
+                alt="PescGelo" 
+                width={50} 
+                height={50} 
+                className="w-14 h-14 group-hover:scale-110 transition-transform duration-300" 
+              />
               <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#29ABE2]"></div>
               <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#29ABE2]"></div>
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-light tracking-wider text-gray-900 dark:text-white">
-                GELO<span className="font-bold text-[#29ABE2]">PREMIUM</span>
+                PESC<span className="font-bold text-[#29ABE2]">GELO</span>
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 tracking-wider">QUALIDADE CRISTALINA</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 tracking-wider">SUA MARCA DE GELO ESCAMA</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <NavLink href="#benefits">Benefícios</NavLink>
-            <NavLink href="#features">Diferenciais</NavLink>
-            <NavLink href="#services">Serviços</NavLink>
-            <NavLink href="#portfolio">Produtos</NavLink>
+            <NavLink href="#produto">Produtos</NavLink>
+            <NavLink href="#benefits">Diferenciais</NavLink>
+            <NavLink href="#about">Quem Somos</NavLink>
             <NavLink href="#testimonials">Depoimentos</NavLink>
             <NavLink href="#contact">Contato</NavLink>
             
             <div className="ml-4 flex items-center">
-              <Link href="#contact">
+              <Link href="https://wa.me/5585984353984?text=Olá! Gostaria de fazer um pedido de gelo em escama.">
                 <Button className="bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg px-6 py-6 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#29ABE2]/20 flex items-center gap-2 group">
                   <ShoppingCart className="group-hover:scale-110 transition-transform" />
                   <span>Pedido Online</span>
@@ -146,24 +151,30 @@ export const Navbar = () => {
                 <div className="flex flex-col h-full">
                   <div className="flex-1 py-6 px-2">
                     <div className="mb-8 flex items-center">
-                      <Snowflake className="h-8 w-8 text-[#29ABE2] mr-2" />
+                      <Image 
+                        src="/pescgelo.jpg" 
+                        alt="PescGelo" 
+                        width={40} 
+                        height={40} 
+                        className="h-16 w-16 mr-2" 
+                      />
                       <span className="text-xl font-light text-gray-900 dark:text-white">
-                        GELO<span className="font-bold text-[#29ABE2]">PREMIUM</span>
+                        PESC<span className="font-bold text-[#29ABE2]">GELO</span>
                       </span>
                     </div>
                     
                     <div className="flex flex-col space-y-2">
-                      <MobileNavLink href="#benefits" closeMenu={() => setMobileMenuOpen(false)}>Benefícios</MobileNavLink>
-                      <MobileNavLink href="#features" closeMenu={() => setMobileMenuOpen(false)}>Diferenciais</MobileNavLink>
-                      <MobileNavLink href="#services" closeMenu={() => setMobileMenuOpen(false)}>Serviços</MobileNavLink>
-                      <MobileNavLink href="#portfolio" closeMenu={() => setMobileMenuOpen(false)}>Produtos</MobileNavLink>
+                      <MobileNavLink href="#produto" closeMenu={() => setMobileMenuOpen(false)}>Produtos</MobileNavLink>
+                      <MobileNavLink href="#benefits" closeMenu={() => setMobileMenuOpen(false)}>Diferenciais</MobileNavLink>
+                      <MobileNavLink href="#about" closeMenu={() => setMobileMenuOpen(false)}>Quem Somos</MobileNavLink>
                       <MobileNavLink href="#testimonials" closeMenu={() => setMobileMenuOpen(false)}>Depoimentos</MobileNavLink>
                       <MobileNavLink href="#contact" closeMenu={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
+                      <MobileNavLink href="#faq" closeMenu={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
                     </div>
                   </div>
                   
                   <div className="p-4 border-t border-gray-200 dark:border-gray-800">
-                    <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="https://wa.me/5585984353984?text=Olá! Gostaria de fazer um pedido de gelo em escama." onClick={() => setMobileMenuOpen(false)}>
                       <Button className="w-full bg-[#29ABE2] hover:bg-[#29ABE2]/90 text-white rounded-lg py-5 font-medium transition-all flex items-center justify-center gap-2">
                         <ShoppingCart className="h-5 w-5" />
                         <span>Pedido Online</span>

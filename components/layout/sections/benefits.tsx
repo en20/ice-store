@@ -11,32 +11,39 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "Droplets",
-    title: "Pureza Garantida",
+    icon: "Award",
+    title: "Especialização Comprovada",
     description:
-      "Nosso gelo é produzido com água duplamente filtrada e tratada, garantindo produtos cristalinos, sem impurezas e seguros para o consumo.",
+      "Foco total em Gelo em Escama para entregar o melhor produto para sua necessidade específica.",
     color: "bg-blue-50 dark:bg-blue-900/10",
-  },
-  {
-    icon: "Timer",
-    title: "Entrega Rápida",
-    description:
-      "Sistema de logística eficiente que garante entregas em até 2 horas após a confirmação do pedido, mantendo o gelo nas condições ideais.",
-    color: "bg-sky-50 dark:bg-sky-900/10",
   },
   {
     icon: "BadgeCheck",
     title: "Qualidade Superior",
     description:
-      "Equipamentos de última geração que garantem gelo com formato perfeito, densidade ideal e derretimento lento, perfeito para drinks e alimentos.",
+      "Processo produtivo controlado para garantir eficiência e pureza.",
+    color: "bg-sky-50 dark:bg-sky-900/10",
+  },
+  {
+    icon: "Percent",
+    title: "Garantia de Melhor Preço",
+    description:
+      "Confiança na nossa competitividade. COBRIMOS QUALQUER ORÇAMENTO.",
     color: "bg-cyan-50 dark:bg-cyan-900/10",
   },
   {
-    icon: "Package",
-    title: "Embalagem Especial",
+    icon: "Headset",
+    title: "Atendimento Direto",
     description:
-      "Utilizamos embalagens térmicas que preservam o gelo por mais tempo, reduzindo o derretimento durante o transporte e armazenamento.",
+      "Compre direto da fábrica com agilidade para retirada.",
     color: "bg-indigo-50 dark:bg-indigo-900/10",
+  },
+  {
+    icon: "MapPin",
+    title: "Localização Estratégica",
+    description:
+      "Fácil acesso para retirada em Maracanaú.",
+    color: "bg-purple-50 dark:bg-purple-900/10",
   },
 ];
 
@@ -61,17 +68,17 @@ export const BenefitsSection = () => {
             Nossos Diferenciais
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            Vantagens de Escolher <span className="text-[#29ABE2]">Nosso Gelo Premium</span>
+            Por Que Escolher a <span className="text-[#29ABE2]">Pescgelo</span>?
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            Nossa fábrica combina tecnologia avançada e processos rigorosos de controle 
-            de qualidade para entregar o melhor gelo da região com rapidez e excelência.
+            Oferecemos gelo em escama de alta qualidade com foco em seu negócio,
+            aliando especialização, preço competitivo e atendimento ágil.
           </p>
         </div>
 
         {/* Benefits grid with more creative layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefitList.map(({ icon, title, description, color }, index) => (
             <div
               key={title}
@@ -109,26 +116,7 @@ export const BenefitsSection = () => {
         </div>
 
         {/* Feature highlight */}
-        <div className="mt-20 bg-[#29ABE2]/5 rounded-lg p-8 border border-[#29ABE2]/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Produção <span className="text-[#29ABE2]">Sustentável</span></h3>
-              <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-                Nosso processo de produção é otimizado para reduzir o consumo de água e energia, 
-                contribuindo para a preservação do meio ambiente sem comprometer a qualidade.
-              </p>
-            </div>
-            <div>
-              <Image 
-                src="/gelo-hero.jpg" 
-                alt="Produção sustentável" 
-                width={670} 
-                height={700} 
-                className="rounded-lg object-cover" 
-              />
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
