@@ -11,7 +11,7 @@ export const HeroSection = () => {
   // Check screen size on mount and when window resizes
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 768); 
     };
     
     // Initial check
@@ -25,7 +25,7 @@ export const HeroSection = () => {
   }, []);
 
   // Select appropriate image based on screen size only
-  const imagePath = isMobile ? "/gelo-mobile.jpg" : "/gelo.jpg";
+  const imagePath = isMobile ? "/HERO-IMAGE.png" : "/HERO-IMAGE.png";
 
   return (
     <section className="w-full h-screen relative overflow-hidden">
@@ -41,7 +41,7 @@ export const HeroSection = () => {
           quality={90}
         />
         {/* Dark overlay for better readability */}
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-blue-500/50 z-10"></div>
       </div>
 
       {/* Decorative grid - visual element */}
