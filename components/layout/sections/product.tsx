@@ -205,7 +205,7 @@ export const ProductSection = () => {
             <div className="mt-8 pl-14">
               <Button 
                 variant="outline" 
-                className="border-[#29ABE2] text-[#29ABE2] hover:bg-[#29ABE2] hover:text-white"
+                className="border-[#0A6A9C] text-[#0A6A9C] hover:bg-[#0A6A9C] hover:text-white"
                 asChild
               >
                 <Link href="https://wa.me/5585991124238?text=Olá! Gostaria de informações sobre o Gelo em Escama da Pescgelo">

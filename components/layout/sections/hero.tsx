@@ -41,7 +41,7 @@ export const HeroSection = () => {
           quality={90}
         />
         {/* Dark overlay for better readability */}
-        <div className="absolute inset-0 bg-blue-500/50 z-10"></div>
+        <div className="absolute inset-0 bg-blue-400/50 z-10"></div>
       </div>
 
       {/* Decorative grid - visual element */}
