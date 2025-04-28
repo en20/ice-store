@@ -41,7 +41,7 @@ export const HeroSection = () => {
           quality={90}
         />
         {/* Dark overlay for better readability */}
-        <div className="absolute inset-0 bg-blue-500/50 z-10"></div>
+        <div className="absolute inset-0 bg-blue-700/50 z-10"></div>
       </div>
 
       {/* Decorative grid - visual element */}
@@ -99,7 +99,9 @@ export const HeroSection = () => {
             <p className="text-md text-white/80 my-6 font-light leading-relaxed">
               A Pescgelo é sua especialista em Gelo em Escama em Maracanaú. Ideal para 
               conservação superior de pescados, bebidas e eventos. Garantimos o melhor negócio: 
-              <span className="font-bold text-white"> COBRIMOS QUALQUER ORÇAMENTO.</span>
+              <span className="block mt-2 py-1 px-3 text-lg font-bold text-white bg-white/10 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
+                <Snowflake className="size-4 mr-2" /> COBRIMOS QUALQUER ORÇAMENTO
+              </span>
               <span className="block mt-2 text-md italic">(Serviço exclusivo para retirada no local)</span>
             </p>
 

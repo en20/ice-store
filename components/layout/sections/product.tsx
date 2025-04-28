@@ -185,7 +185,8 @@ export const ProductSection = () => {
                 <div>
                   <h5 className="text-lg font-semibold mb-1">O Melhor Preço Garantido</h5>
                   <p className="text-gray-600 dark:text-gray-400">
-                    <span className="font-bold">COBRIMOS QUALQUER ORÇAMENTO.</span> Traga o orçamento comprovado e faremos o melhor preço para você.
+                    <span className="block text-lg font-extrabold text-[#29ABE2] uppercase my-2 py-1 px-2 bg-[#29ABE2]/10 rounded border-l-4 border-[#29ABE2]">COBRIMOS QUALQUER ORÇAMENTO</span> 
+                    Traga o orçamento comprovado e faremos o melhor preço para você.
                   </p>
                 </div>
               </div>
