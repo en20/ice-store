@@ -41,7 +41,7 @@ export const HeroSection = () => {
           quality={90}
         />
         {/* Dark overlay for better readability */}
-        <div className="absolute inset-0 bg-blue-700/50 z-10"></div>
+        <div className="absolute inset-0 bg-blue-500/50 z-10"></div>
       </div>
 
       {/* Decorative grid - visual element */}
@@ -76,8 +76,8 @@ export const HeroSection = () => {
 
             {/* Main title */}
             <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
-              <span className="block">GELO EM ESCAMA</span>
-              <span className="block relative">
+              <span className="block text-[#0a2463] drop-shadow-md  px-3  rounded-md backdrop-blur-sm">GELO EM ESCAMA</span>
+              <span className="block relative  text-[#0a2463] drop-shadow-md  px-3  rounded-md backdrop-blur-sm">
                 Preço baixo, alta qualidade.
                 <svg
                   className="absolute -bottom-4 -left-20 w-full md:-left-56"
