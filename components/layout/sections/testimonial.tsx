@@ -47,7 +47,7 @@ const reviewList: ReviewProps[] = [
 
 export const TestimonialSection = () => {
   return (
-    <section id="testimonials" className="relative py-24 sm:py-32 overflow-hidden bg-gray-50 dark:bg-gray-900/50">
+    <section id="testimonials" className="relative py-24 sm:py-32 overflow-hidden bg-white">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 opacity-[0.03]">
         <Image
@@ -65,11 +65,11 @@ export const TestimonialSection = () => {
           <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
             Depoimentos de Clientes
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             A Experiência de <span className="text-[#29ABE2]">Nossos Clientes</span>
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             A satisfação dos nossos clientes é a nossa maior conquista. Confira o que eles têm a dizer sobre nossos produtos e serviços.
           </p>
         </div>
@@ -86,7 +86,7 @@ export const TestimonialSection = () => {
                 key={review.name}
                 className="md:basis-1/2 lg:basis-1/3 p-2"
               >
-                <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-6 h-full hover:shadow-md hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                <div className="group bg-white rounded-lg shadow-sm border border-gray-100 p-6 h-full hover:shadow-md hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
                   {/* Accent color top border */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-[#29ABE2]"></div>
                   
@@ -104,7 +104,7 @@ export const TestimonialSection = () => {
                   </div>
                   
                   {/* Comment */}
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
+                  <p className="text-gray-600 mb-6 italic">
                     {review.comment}
                   </p>
                   
@@ -118,8 +118,8 @@ export const TestimonialSection = () => {
                     </Avatar>
 
                     <div className="ml-4">
-                      <h4 className="font-bold text-gray-900 dark:text-white">{review.name}</h4>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{review.userName}</p>
+                      <h4 className="font-bold text-gray-900">{review.name}</h4>
+                      <p className="text-sm text-gray-500">{review.userName}</p>
                     </div>
                   </div>
                   

@@ -49,7 +49,7 @@ const benefitList: BenefitsProps[] = [
 
 export const BenefitsSection = () => {
   return (
-    <section id="benefits" className="relative py-24 sm:py-32 overflow-hidden bg-gray-50 dark:bg-gray-900/50">
+    <section id="benefits" className="relative py-24 sm:py-32 overflow-hidden bg-white">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 opacity-[0.05]">
         <Image
@@ -67,11 +67,11 @@ export const BenefitsSection = () => {
           <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
             Nossos Diferenciais
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Por Que Escolher a <span className="text-[#29ABE2]">Pescgelo</span>?
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Oferecemos gelo em escama de alta qualidade com foco em seu negócio,
             aliando especialização, preço competitivo e atendimento ágil.
           </p>
@@ -82,7 +82,7 @@ export const BenefitsSection = () => {
           {benefitList.map(({ icon, title, description, color }, index) => (
             <div
               key={title}
-              className={`group relative rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-800 p-6 pt-12 h-full hover:shadow-xl hover:-translate-y-1 bg-white dark:bg-gray-800`}
+              className={`group relative rounded-lg overflow-hidden transition-all duration-300 border border-gray-100 p-6 pt-12 h-full hover:shadow-xl hover:-translate-y-1 bg-white`}
             >
               {/* Accent color top border */}
               <div className={`absolute top-0 left-0 right-0 h-1.5 bg-[#29ABE2]`}></div>
@@ -103,11 +103,11 @@ export const BenefitsSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[#29ABE2] transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#29ABE2] transition-colors">
                 {title}
               </h3>
 
-              <p className="text-gray-500 dark:text-gray-400 text-sm">{description}</p>
+              <p className="text-gray-600 text-sm">{description}</p>
 
               {/* Bottom decorative element */}
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#29ABE2] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>

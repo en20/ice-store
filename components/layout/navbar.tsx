@@ -113,7 +113,7 @@ export const Navbar = () => {
               <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#29ABE2]"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-light tracking-wider text-gray-900 dark:text-white">
+              <span className="text-4xl font-light tracking-wider text-gray-900 dark:text-white">
                 PESC<span className="font-bold text-[#29ABE2]">GELO</span>
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 tracking-wider">SUA MARCA DE GELO ESCAMA</span>

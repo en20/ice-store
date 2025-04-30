@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const ProductSection = () => {
   return (
-    <section id="produto" className="relative py-20 sm:py-28 overflow-hidden bg-white dark:bg-gray-900">
+    <section id="produto" className="relative py-20 sm:py-28 overflow-hidden bg-gray-900">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 opacity-[0.03]">
         <Image
@@ -24,11 +24,11 @@ export const ProductSection = () => {
           <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
             Nosso Produto
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Gelo em Escama Pescgelo: <span className="text-[#29ABE2]">A Solução Eficiente em Refrigeração</span>
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-gray-300 max-w-3xl mx-auto">
             Na Pescgelo, somos especialistas dedicados exclusivamente à produção de Gelo em Escama de alta qualidade.
             Compreendemos que, para aplicações que exigem resfriamento rápido e conservação eficaz, o gelo em escama 
             oferece vantagens incomparáveis sobre outros tipos. Nosso foco garante um produto superior para suas necessidades.
@@ -63,7 +63,7 @@ export const ProductSection = () => {
 
           {/* Right side - Benefits */}
           <div className="space-y-8">
-            <h4 className="text-2xl font-bold text-gray-800 dark:text-white">
+            <h4 className="text-2xl font-bold text-white">
               Benefícios Essenciais do Gelo em Escama Pescgelo:
             </h4>
             
@@ -73,8 +73,8 @@ export const ProductSection = () => {
                   <Check className="w-6 h-6 text-[#29ABE2]" />
                 </div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">Resfriamento Rápido e Eficaz</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">Resfriamento Rápido e Eficaz</h5>
+                  <p className="text-gray-300">
                     Maximiza o contato com a superfície, transferindo frio de forma ágil e uniforme.
                   </p>
                 </div>
@@ -85,8 +85,8 @@ export const ProductSection = () => {
                   <Check className="w-6 h-6 text-[#29ABE2]" />
                 </div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">Conservação Prolongada</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">Conservação Prolongada</h5>
+                  <p className="text-gray-300">
                     Ideal para pescados e alimentos perecíveis, mantendo o frescor por mais tempo.
                   </p>
                 </div>
@@ -97,8 +97,8 @@ export const ProductSection = () => {
                   <Check className="w-6 h-6 text-[#29ABE2]" />
                 </div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">Proteção e Adaptabilidade</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">Proteção e Adaptabilidade</h5>
+                  <p className="text-gray-300">
                     Molda-se perfeitamente aos produtos sem danificá-los, excelente para transporte e exposição.
                   </p>
                 </div>
@@ -120,14 +120,14 @@ export const ProductSection = () => {
 
         {/* Applications section */}
         <div className="mb-16">
-          <h4 className="text-2xl font-bold text-center mb-10">
+          <h4 className="text-2xl font-bold text-center mb-10 text-white">
             Aplicações Recomendadas
           </h4>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {['Peixarias', 'Restaurantes', 'Supermercados', 'Eventos', 'Bares', 'Buffets', 'Transporte', 'Indústrias'].map((application, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 p-4 text-center hover:shadow-md hover:border-[#29ABE2]/50 transition-all duration-300 hover:-translate-y-1">
-                <span className="text-sm font-medium">{application}</span>
+              <div key={index} className="bg-gray-800 rounded-lg shadow-sm border border-gray-700 p-4 text-center hover:shadow-md hover:border-[#29ABE2]/50 transition-all duration-300 hover:-translate-y-1">
+                <span className="text-sm font-medium text-white">{application}</span>
               </div>
             ))}
           </div>
@@ -164,8 +164,8 @@ export const ProductSection = () => {
           </div>
 
           {/* Right side - Commitment */}
-          <div className="lg:col-span-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8">
-            <h4 className="text-2xl font-bold mb-6">
+          <div className="lg:col-span-3 bg-gray-800/50 rounded-2xl p-8">
+            <h4 className="text-2xl font-bold mb-6 text-white">
               Nosso Compromisso
             </h4>
             
@@ -173,8 +173,8 @@ export const ProductSection = () => {
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">1</div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">Qualidade e Pureza Asseguradas</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">Qualidade e Pureza Asseguradas</h5>
+                  <p className="text-gray-300">
                     Todo nosso gelo é produzido com água filtrada e seguindo rigorosos padrões de higiene.
                   </p>
                 </div>
@@ -183,8 +183,8 @@ export const ProductSection = () => {
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">2</div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">O Melhor Preço Garantido</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">O Melhor Preço Garantido</h5>
+                  <p className="text-gray-300">
                     <span className="block text-lg font-extrabold text-[#29ABE2] uppercase my-2 py-1 px-2 bg-[#29ABE2]/10 rounded border-l-4 border-[#29ABE2]">COBRIMOS QUALQUER ORÇAMENTO</span> 
                     Traga o orçamento comprovado e faremos o melhor preço para você.
                   </p>
@@ -194,8 +194,8 @@ export const ProductSection = () => {
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">3</div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1">Retirada Conveniente</h5>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h5 className="text-lg font-semibold mb-1 text-white">Retirada Conveniente</h5>
+                  <p className="text-gray-300">
                     Disponível para retirada em nossa unidade localizada em Maracanaú, com atendimento rápido e eficiente.
                   </p>
                 </div>
@@ -205,7 +205,7 @@ export const ProductSection = () => {
             <div className="mt-8 pl-14">
               <Button 
                 variant="outline" 
-                className="border-[#0A6A9C] text-[#0A6A9C] hover:bg-[#0A6A9C] hover:text-white"
+                className="border-[#0A6A9C] text-[#29ABE2] hover:bg-[#0A6A9C] hover:text-white"
                 asChild
               >
                 <Link href="https://wa.me/5585991124238?text=Olá! Gostaria de informações sobre o Gelo em Escama da Pescgelo">
