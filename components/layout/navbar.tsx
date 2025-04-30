@@ -92,7 +92,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+    <nav className={`static top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
       scrolled 
         ? 'bg-white/95 dark:bg-gray-900/95 shadow-md backdrop-blur-sm py-3' 
         : 'bg-white dark:bg-gray-900 py-5'
