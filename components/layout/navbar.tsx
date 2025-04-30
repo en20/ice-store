@@ -105,9 +105,9 @@ export const Navbar = () => {
               <Image 
                 src="/pescgelo.jpg" 
                 alt="PescGelo" 
-                width={50} 
-                height={50} 
-                className="w-14 h-14 group-hover:scale-110 transition-transform duration-300" 
+                width={100} 
+                height={100} 
+                className="w-20 h-20 group-hover:scale-110 transition-transform duration-300" 
               />
               <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#29ABE2]"></div>
               <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#29ABE2]"></div>

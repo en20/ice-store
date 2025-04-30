@@ -10,7 +10,7 @@ export const ProductSection = () => {
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 opacity-[0.03]">
         <Image
-          src="/escama1.jpg"
+          src="/salmao.png"
           alt=""
           fill
           className="object-cover"
@@ -41,11 +41,11 @@ export const ProductSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/peixe.jpg"
+                src="/salmao.png"
                 alt="Gelo em Escama Pescgelo com pescados frescos"
-                width={640}
+                width={480}
                 height={480}
-                className="w-full h-auto object-cover"
+                className="w-full h-[480px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -139,7 +139,7 @@ export const ProductSection = () => {
           <div className="lg:col-span-2 grid grid-cols-2 gap-4">
             <div className="relative h-40 md:h-48 rounded-lg overflow-hidden">
               <Image 
-                src="/escama3.jpeg"
+                src="/maquina.png"
                 alt="Exposição de pescados em gelo" 
                 fill 
                 className="object-cover" 
@@ -147,7 +147,7 @@ export const ProductSection = () => {
             </div>
             <div className="relative h-40 md:h-48 rounded-lg overflow-hidden">
               <Image 
-                src="/escama2.jpg"
+                src="/bebida.webp"
                 alt="Bebidas resfriadas em balde de gelo" 
                 fill 
                 className="object-cover" 
@@ -155,7 +155,7 @@ export const ProductSection = () => {
             </div>
             <div className="relative h-40 md:h-48 rounded-lg overflow-hidden col-span-2">
               <Image 
-                src="/escama4.png"
+                src="/estoque.png"
                 alt="Variedade de peixes conservados em gelo" 
                 fill 
                 className="object-cover" 
