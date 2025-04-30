@@ -41,7 +41,7 @@ export const ProductSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/salmao.png"
+                src="/coco.png"
                 alt="Gelo em Escama Pescgelo com pescados frescos"
                 width={480}
                 height={480}
