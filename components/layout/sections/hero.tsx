@@ -133,7 +133,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity md:bottom-10 bottom-4">
           <span className="text-[#0a2463] text-sm tracking-widest uppercase mb-2">
             Explore
           </span>
