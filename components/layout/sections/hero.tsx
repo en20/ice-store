@@ -28,7 +28,7 @@ export const HeroSection = () => {
   const imagePath = isMobile ? "/HERO-IMAGE.png" : "/HERO-IMAGE.png";
 
   return (
-    <section className="w-full h-screen relative overflow-hidden">
+    <section className="w-full h-screen relative overflow-hidden z-30">
       {/* Full screen background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -106,7 +106,7 @@ export const HeroSection = () => {
             </p>
 
             {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 z-50">
               <Button
                 size="lg"
                 className="bg-white text-[#29ABE2] hover:bg-white/90 font-medium rounded-md px-8 group"
