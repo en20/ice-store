@@ -22,7 +22,6 @@ import {
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 interface RouteProps {
   href: string;
@@ -92,14 +91,6 @@ export const Navbar = () => {
     };
   }, []);
 
-  // Function to handle smooth scrolling
-  const handleScrollToElement = (elementId: string) => {
-    const targetElement = document.querySelector(elementId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <nav className={`static top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
       scrolled 
@@ -131,11 +122,11 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <NavLink href="#produto" onClick={() => handleScrollToElement("#produto")}>Produtos</NavLink>
-            <NavLink href="#benefits" onClick={() => handleScrollToElement("#benefits")}>Diferenciais</NavLink>
-            <NavLink href="#about" onClick={() => handleScrollToElement("#about")}>Quem Somos</NavLink>
-            <NavLink href="#testimonials" onClick={() => handleScrollToElement("#testimonials")}>Depoimentos</NavLink>
-            <NavLink href="#contact" onClick={() => handleScrollToElement("#contact")}>Contato</NavLink>
+            <NavLink href="#produto">Produtos</NavLink>
+            <NavLink href="#benefits">Diferenciais</NavLink>
+            <NavLink href="#about">Quem Somos</NavLink>
+            <NavLink href="#testimonials">Depoimentos</NavLink>
+            <NavLink href="#contact">Contato</NavLink>
             
             <div className="ml-4 flex items-center">
               <Link href="https://wa.me/5585984353984?text=Olá! Gostaria de fazer um pedido de gelo em escama.">
@@ -173,48 +164,12 @@ export const Navbar = () => {
                     </div>
                     
                     <div className="flex flex-col space-y-2">
-                      <MobileNavLink 
-                        href="#produto" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#produto")}
-                      >
-                        Produtos
-                      </MobileNavLink>
-                      <MobileNavLink 
-                        href="#benefits" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#benefits")}
-                      >
-                        Diferenciais
-                      </MobileNavLink>
-                      <MobileNavLink 
-                        href="#about" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#about")}
-                      >
-                        Quem Somos
-                      </MobileNavLink>
-                      <MobileNavLink 
-                        href="#testimonials" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#testimonials")}
-                      >
-                        Depoimentos
-                      </MobileNavLink>
-                      <MobileNavLink 
-                        href="#contact" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#contact")}
-                      >
-                        Contato
-                      </MobileNavLink>
-                      <MobileNavLink 
-                        href="#faq" 
-                        closeMenu={() => setMobileMenuOpen(false)}
-                        onClick={() => handleScrollToElement("#faq")}
-                      >
-                        FAQ
-                      </MobileNavLink>
+                      <MobileNavLink href="#produto" closeMenu={() => setMobileMenuOpen(false)}>Produtos</MobileNavLink>
+                      <MobileNavLink href="#benefits" closeMenu={() => setMobileMenuOpen(false)}>Diferenciais</MobileNavLink>
+                      <MobileNavLink href="#about" closeMenu={() => setMobileMenuOpen(false)}>Quem Somos</MobileNavLink>
+                      <MobileNavLink href="#testimonials" closeMenu={() => setMobileMenuOpen(false)}>Depoimentos</MobileNavLink>
+                      <MobileNavLink href="#contact" closeMenu={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
+                      <MobileNavLink href="#faq" closeMenu={() => setMobileMenuOpen(false)}>FAQ</MobileNavLink>
                     </div>
                   </div>
                   
@@ -236,23 +191,11 @@ export const Navbar = () => {
   );
 };
 
-const NavLink = ({ 
-  href, 
-  children,
-  onClick
-}: { 
-  href: string; 
-  children: React.ReactNode;
-  onClick?: () => void;
-}) => {
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   return (
     <Link
       href={href}
       className="relative px-4 py-3 text-gray-700 dark:text-gray-300 font-medium hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-colors group"
-      onClick={(e) => {
-        e.preventDefault();
-        if (onClick) onClick();
-      }}
     >
       {children}
       <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-[#29ABE2] group-hover:w-2/3 group-hover:left-[15%] transition-all duration-300"></span>
@@ -263,27 +206,24 @@ const NavLink = ({
 const MobileNavLink = ({ 
   href, 
   children, 
-  closeMenu,
-  onClick
+  closeMenu 
 }: { 
   href: string; 
   children: React.ReactNode;
   closeMenu: () => void;
-  onClick?: () => void;
 }) => {
   return (
     <Link
       href={href}
       className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg hover:text-[#29ABE2] dark:hover:text-[#29ABE2] transition-all"
-      onClick={(e) => {
-        e.preventDefault();
+      onClick={() => {
         closeMenu();
-        if (onClick) {
-          // Short delay to ensure the menu closes first
-          setTimeout(() => {
-            onClick();
-          }, 100);
-        }
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }}
     >
       {children}

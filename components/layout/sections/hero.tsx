@@ -30,7 +30,7 @@ export const HeroSection = () => {
   return (
     <section className="w-full h-screen relative overflow-hidden">
       {/* Full screen background image */}
-      <div className="absolute inset-0 w-full md:h-full h-[500px] z-0">
+      <div className="absolute inset-0 w-full h-full z-0">
         <Image
           src={imagePath}
           alt="Gelo em escama de alta qualidade"
