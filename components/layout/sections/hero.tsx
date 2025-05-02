@@ -129,17 +129,13 @@ export const HeroSection = () => {
                 </Link>
               </Button>
             </div>
+            <div className="flex flex-col items-center mt-32 sm:mt-48">
+              <span className="text-[#0a2463] text-sm tracking-widest uppercase font-medium block text-center">
+                Explore
+              </span>
+              <ArrowDown className="text-[#0a2463] animate-bounce size-5 mx-auto mt-1" />
+            </div>
           </div>
-        </div>
-
-        {/* Scroll indicator - bottom centered */}
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity z-30">
-          <Link href="#produto" className="text-center  px-4 py-2 rounded-full backdrop-blur-sm   transition-all duration-300">
-            <span className="text-[#0a2463] text-sm tracking-widest uppercase font-medium block">
-              Explore
-            </span>
-            <ArrowDown className="text-[#0a2463] animate-bounce size-5 mx-auto mt-1" />
-          </Link>
         </div>
       </div>
     </section>
