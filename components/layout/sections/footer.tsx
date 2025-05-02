@@ -158,7 +158,7 @@ export const FooterSection = () => {
         </div>
         
         {/* WhatsApp floating button */}
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-6 right-6 z-[9999]">
           <a 
             href="https://wa.me/5585984353984" 
             target="_blank"
