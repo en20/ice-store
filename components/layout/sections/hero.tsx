@@ -28,7 +28,7 @@ export const HeroSection = () => {
   const imagePath = isMobile ? "/HERO-IMAGE.png" : "/HERO-IMAGE.png";
 
   return (
-    <section className="w-full h-screen relative overflow-hidden z-30">
+    <section className="w-full h-screen relative overflow-hidden">
       {/* Full screen background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
