@@ -3,8 +3,8 @@ import React from 'react';
 export const WhatsAppButton = () => {
   return (
     <div 
-      className="fixed bottom-6 right-6" 
-      style={{ zIndex: 99999 }} // Usar inline style com zIndex muito alto para garantir sobreposição
+      className="fixed bottom-6 right-6 z-50" 
+      style={{ zIndex: 99999 }}
     >
       <a 
         href="https://wa.me/5585984353984" 
