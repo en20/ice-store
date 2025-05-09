@@ -64,21 +64,21 @@ export const HeroSection = () => {
 
       {/* Main content */}
       <div className="relative z-20 container mx-auto h-full">
-        <div className="flex flex-col h-full justify-center md:items-start md:max-w-2xl text-white">
+        <div className="flex flex-col h-full justify-center md:items-start md:max-w-2xl text-[#0a2463]">
           <div className="space-y-4">
             {/* Decorative line and snowflake logo */}
             <div className="flex items-center space-x-4">
-              <div className="h-px w-16 bg-white/60"></div>
-              <span className="text-white/80 uppercase tracking-widest text-sm font-light flex items-center">
+              <div className="h-px w-16 bg-[#0a2463]/60"></div>
+              <span className="text-[#0a2463] uppercase tracking-widest text-sm font-light flex items-center">
                 <Snowflake className="size-4 mr-2" /> Fabrica de Gelo Premium
               </span>
             </div>
 
             {/* Main title */}
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
-              <span className="block text-[#0a2463] drop-shadow-md  px-3  rounded-md backdrop-blur-sm">GELO EM ESCAMA</span>
-              <span className="block relative  text-[#0a2463] drop-shadow-md  px-3  rounded-md backdrop-blur-sm">
-                Preço baixo, alta qualidade.
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
+              <span className="block text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">GELO EM ESCAMA</span>
+              <span className="block relative text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">
+                Preço baixo, alta qualidade
                 <svg
                   className="absolute -bottom-4 -left-20 w-full md:-left-56"
                   height="8"
@@ -96,17 +96,17 @@ export const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-md text-white/80 my-6 font-light leading-relaxed">
+            <p className="text-md text-[#0a2463] my-6 font-medium leading-relaxed">
               A Pescgelo é sua especialista em Gelo em Escama em Maracanaú. Ideal para 
               conservação superior de pescados, bebidas e eventos. Garantimos o melhor negócio: 
-              <span className="block mt-2 py-1 px-3 text-lg font-bold text-white bg-white/10 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
+              <span className="block mt-2 py-1 px-3 text-lg font-bold text-[#0a2463] bg-white/30 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
                 <Snowflake className="size-4 mr-2" /> COBRIMOS QUALQUER ORÇAMENTO
               </span>
               <span className="block mt-2 text-md italic">(Serviço exclusivo para retirada no local)</span>
             </p>
 
             {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 z-50">
               <Button
                 size="lg"
                 className="bg-white text-[#29ABE2] hover:bg-white/90 font-medium rounded-md px-8 group"
@@ -120,7 +120,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white bg-transparent border hover:bg-white hover:text-[#29ABE2] font-medium rounded-md px-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg group"
+                className="border-[#0a2463] text-[#0a2463] bg-transparent border hover:bg-[#0a2463] hover:text-white font-medium rounded-md px-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg group"
                 asChild
               >
                 <Link href="#produto">
@@ -129,15 +129,13 @@ export const HeroSection = () => {
                 </Link>
               </Button>
             </div>
+            <div className="flex flex-col items-center mt-32 sm:mt-48">
+              <span className="text-[#0a2463] text-sm tracking-widest uppercase font-medium block text-center">
+                Explore
+              </span>
+              <ArrowDown className="text-[#0a2463] animate-bounce size-5 mx-auto mt-1" />
+            </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity">
-          <span className="text-white/70 text-sm tracking-widest uppercase mb-2">
-            Explore
-          </span>
-          <ArrowDown className="text-white animate-bounce size-5" />
         </div>
       </div>
     </section>

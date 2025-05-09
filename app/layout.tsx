@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { FooterSection } from "@/components/layout/sections/footer";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
@@ -28,6 +30,8 @@ export default function RootLayout({
           {children}
 
           <FooterSection />
+          
+          <WhatsAppButton />
         
       </body>
     </html>

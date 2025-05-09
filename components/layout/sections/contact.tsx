@@ -60,7 +60,7 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden bg-white dark:bg-gray-900">
+    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden bg-gray-900">
       {/* Background pattern */}
       <div className="absolute inset-0 -z-10 opacity-[0.03]">
         <Image
@@ -78,11 +78,11 @@ export const ContactSection = () => {
           <h2 className="text-sm font-medium text-[#29ABE2] uppercase tracking-wider mb-2">
             CONTATO
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl text-white md:text-4xl font-bold mb-4">
             Entre em Contato e Faça seu <span className="text-[#29ABE2]">Pedido para Retirada</span>
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto">
             Solicite um orçamento ou tire suas dúvidas sobre nosso gelo em escama.
             <span className="block mt-2 font-bold text-[#29ABE2]">NOSSO ATENDIMENTO É EXCLUSIVO PARA RETIRADA NO LOCAL.</span>
           </p>
@@ -209,11 +209,11 @@ export const ContactSection = () => {
               <CardHeader className="pb-2">
                 <div className="flex items-center space-x-2">
                   <MapPin className="text-[#29ABE2] h-5 w-5" />
-                  <h3 className="font-bold text-lg">Lembrete Importante</h3>
+                  <h3 className="font-bold text-white text-lg">Lembrete Importante</h3>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-white">
                   Nosso atendimento é <span className="font-bold">EXCLUSIVO PARA RETIRADA NO LOCAL</span>. 
                   Oferecemos o melhor preço da região para gelo em escama. Traga seu orçamento: 
                   <span className="font-bold text-[#29ABE2]"> COBRIMOS QUALQUER PREÇO!</span>
@@ -229,15 +229,15 @@ export const ContactSection = () => {
         <div className="mt-16 flex flex-wrap justify-center gap-8 bg-[#29ABE2]/5 rounded-lg p-6 border border-[#29ABE2]/20 max-w-4xl mx-auto">
           <div className="text-center">
             <div className="text-xl font-bold text-[#29ABE2] mb-1">Melhor preço</div>
-            <p className="text-sm text-gray-500">Cobrimos qualquer orçamento comprovado</p>
+            <p className="text-sm text-white">Cobrimos qualquer orçamento comprovado</p>
           </div>
           <div className="text-center">
             <div className="text-xl font-bold text-[#29ABE2] mb-1">Gelo de qualidade</div>
-            <p className="text-sm text-gray-500">Perfeito para conservação de alimentos</p>
+            <p className="text-sm text-white">Perfeito para conservação de alimentos</p>
           </div>
           <div className="text-center">
             <div className="text-xl font-bold text-[#29ABE2] mb-1">Retirada rápida</div>
-            <p className="text-sm text-gray-500">Atendimento ágil e eficiente</p>
+            <p className="text-sm text-white">Atendimento ágil e eficiente</p>
           </div>
         </div>
       </div>

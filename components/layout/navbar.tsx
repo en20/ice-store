@@ -92,7 +92,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+    <nav className={`static top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
       scrolled 
         ? 'bg-white/95 dark:bg-gray-900/95 shadow-md backdrop-blur-sm py-3' 
         : 'bg-white dark:bg-gray-900 py-5'
@@ -105,15 +105,15 @@ export const Navbar = () => {
               <Image 
                 src="/pescgelo.jpg" 
                 alt="PescGelo" 
-                width={50} 
-                height={50} 
-                className="w-14 h-14 group-hover:scale-110 transition-transform duration-300" 
+                width={100} 
+                height={100} 
+                className="w-20 h-20 group-hover:scale-110 transition-transform duration-300" 
               />
               <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#29ABE2]"></div>
               <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#29ABE2]"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-light tracking-wider text-gray-900 dark:text-white">
+              <span className="text-4xl font-light tracking-wider text-gray-900 dark:text-white">
                 PESC<span className="font-bold text-[#29ABE2]">GELO</span>
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 tracking-wider">SUA MARCA DE GELO ESCAMA</span>
