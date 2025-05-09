@@ -1,4 +1,4 @@
-import { Phone, Mail, Instagram, ExternalLink, MapPin } from "lucide-react";
+import { Phone, Mail, Instagram, ExternalLink, MapPin, Facebook } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -132,6 +132,17 @@ export const FooterSection = () => {
                     >
                       <Instagram className="text-[#29ABE2] h-4 w-4 mr-2" />
                       <span className="select-text">@pescgelo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://facebook.com/pescgelo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-[#29ABE2] transition-colors flex items-center cursor-pointer"
+                    >
+                      <Facebook className="text-[#29ABE2] h-4 w-4 mr-2" />
+                      <span className="select-text">Pescgelo</span>
                     </a>
                   </li>
                 </ul>
