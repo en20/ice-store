@@ -35,14 +35,14 @@ const benefitList: BenefitsProps[] = [
     icon: "Headset",
     title: "Atendimento Direto",
     description:
-      "Compre direto da fábrica com agilidade para retirada.",
+      "Compre direto da fábrica com agilidade para entrega ou retirada.",
     color: "bg-indigo-50 dark:bg-indigo-900/10",
   },
   {
     icon: "MapPin",
-    title: "Localização Estratégica",
+    title: "Conveniência Total",
     description:
-      "Fácil acesso para retirada em Maracanaú.",
+      "Retirada no local ou entrega rápida em Maracanaú e região",
     color: "bg-purple-50 dark:bg-purple-900/10",
   },
 ];

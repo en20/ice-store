@@ -20,7 +20,7 @@ const FAQList: FAQProps[] = [
   },
   {
     question: "Vocês realizam entrega?",
-    answer: "Não. No momento, nosso serviço é focado na qualidade e no melhor preço, sendo exclusivo para retirada em nossa unidade em Maracanaú.",
+    answer: "Sim! você pode retirar em nossa unidade em maracanaú ou solicitar entrega rápida na região. Garantimos a mesma qualidade superior e melhor preço em ambas as opções. Consulte disponibilidade de entrega para a sua área",
     value: "item-2",
   },
   {

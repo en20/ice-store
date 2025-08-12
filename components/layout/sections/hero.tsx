@@ -102,7 +102,7 @@ export const HeroSection = () => {
               <span className="block mt-2 py-1 px-3 text-lg font-bold text-[#0a2463] bg-white/30 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
                 <Snowflake className="size-4 mr-2" /> COBRIMOS QUALQUER ORÇAMENTO
               </span>
-              <span className="block mt-2 text-md italic">(Serviço exclusivo para retirada no local)</span>
+              <span className="block mt-2 text-md italic">(RETIRADA NO LOCAL OU ENTREGA NA SUA PORTA)</span>
             </p>
 
             {/* Action buttons */}

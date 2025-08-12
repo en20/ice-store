@@ -142,15 +142,15 @@ export const ProductSection = () => {
                 src="/maquina.png"
                 alt="Exposição de pescados em gelo" 
                 fill 
-                className="object-cover" 
+                className="object-contain" 
               />
             </div>
             <div className="relative h-40 md:h-48 rounded-lg overflow-hidden">
               <Image 
-                src="/bebida.webp"
+                src="/caminhao.jpeg"
                 alt="Bebidas resfriadas em balde de gelo" 
                 fill 
-                className="object-cover" 
+                className="object-contain" 
               />
             </div>
             <div className="relative h-40 md:h-48 rounded-lg overflow-hidden col-span-2">
@@ -194,9 +194,9 @@ export const ProductSection = () => {
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">3</div>
                 <div>
-                  <h5 className="text-lg font-semibold mb-1 text-white">Retirada Conveniente</h5>
+                  <h5 className="text-lg font-semibold mb-1 text-white">Entrega Rápida</h5>
                   <p className="text-gray-300">
-                    Disponível para retirada em nossa unidade localizada em Maracanaú, com atendimento rápido e eficiente.
+                    Levamos nosso gelo de qualidade até você
                   </p>
                 </div>
               </div>

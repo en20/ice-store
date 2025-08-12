@@ -79,12 +79,12 @@ export const ContactSection = () => {
             CONTATO
           </h2>
           <h3 className="text-3xl text-white md:text-4xl font-bold mb-4">
-            Entre em Contato e Faça seu <span className="text-[#29ABE2]">Pedido para Retirada</span>
+            Entre em Contato e Faça seu <span className="text-[#29ABE2]">Pedido para Entrega ou Retirada</span>
           </h3>
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
           <p className="text-white max-w-2xl mx-auto">
             Solicite um orçamento ou tire suas dúvidas sobre nosso gelo em escama.
-            <span className="block mt-2 font-bold text-[#29ABE2]">NOSSO ATENDIMENTO É EXCLUSIVO PARA RETIRADA NO LOCAL.</span>
+            <span className="block mt-2 font-bold text-[#29ABE2]">RETIRADA NO LOCAL OU ENTREGA RÁPIDA, VOCÊ QUE ESCOLHE!</span>
           </p>
         </div>
 
