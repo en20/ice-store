@@ -64,77 +64,98 @@ export const HeroSection = () => {
 
       {/* Main content */}
       <div className="relative z-20 container mx-auto h-full">
-        <div className="flex flex-col h-full justify-center md:items-start md:max-w-2xl text-[#0a2463]">
-          <div className="space-y-4">
-            {/* Decorative line and snowflake logo */}
-            <div className="flex items-center space-x-4">
-              <div className="h-px w-16 bg-[#0a2463]/60"></div>
-              <span className="text-[#0a2463] uppercase tracking-widest text-sm font-light flex items-center">
-                <Snowflake className="size-4 mr-2" /> Fabrica de Gelo Premium
-              </span>
-            </div>
+        <div className="flex flex-col lg:flex-row h-full justify-center items-center">
+          {/* Left side - Text content */}
+          <div className="flex-1 lg:max-w-2xl text-[#0a2463] z-30">
+            <div className="space-y-4">
+              {/* Decorative line and snowflake logo */}
+              <div className="flex items-center space-x-4">
+                <div className="h-px w-16 bg-[#0a2463]/60"></div>
+                <span className="text-[#0a2463] uppercase tracking-widest text-sm font-light flex items-center">
+                  <Snowflake className="size-4 mr-2" /> Fabrica de Gelo Premium
+                </span>
+              </div>
 
-            {/* Main title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-              <span className="block text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">GELO EM ESCAMA</span>
-              <span className="block relative text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">
-                Preço baixo, alta qualidade
-                <svg
-                  className="absolute -bottom-4 -left-20 w-full md:-left-56"
-                  height="8"
-                  viewBox="0 0 200 8"
+              {/* Main title */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
+                <span className="block text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">GELO EM ESCAMA</span>
+                <span className="block relative text-[#0a2463] drop-shadow-md px-3 rounded-md backdrop-blur-sm">
+                  Preço baixo, alta qualidade
+                  <svg
+                    className="absolute -bottom-4 -left-20 w-full md:-left-56"
+                    height="8"
+                    viewBox="0 0 200 8"
+                  >
+                    <path
+                      d="M1 4.5C50 2.5 100 2.5 199 6.5"
+                      stroke="#29ABE2"
+                      strokeWidth="6"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-md text-[#0a2463] my-6 font-medium leading-relaxed">
+                A Pescgelo é sua especialista em Gelo em Escama em Maracanaú. Ideal para 
+                conservação superior de pescados, bebidas e eventos. Garantimos o melhor negócio: 
+                <span className="block mt-2 py-1 px-3 text-lg font-bold text-[#0a2463] bg-white/30 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
+                  <Snowflake className="size-4 mr-2" /> COBRIMOS QUALQUER ORÇAMENTO
+                </span>
+                <span className="block mt-2 text-md italic">(RETIRADA NO LOCAL OU ENTREGA NA SUA PORTA)</span>
+              </p>
+
+              {/* Action buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-8 z-50">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#29ABE2] hover:bg-white/90 font-medium rounded-md px-8 group"
+                  asChild
                 >
-                  <path
-                    d="M1 4.5C50 2.5 100 2.5 199 6.5"
-                    stroke="#29ABE2"
-                    strokeWidth="6"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-md text-[#0a2463] my-6 font-medium leading-relaxed">
-              A Pescgelo é sua especialista em Gelo em Escama em Maracanaú. Ideal para 
-              conservação superior de pescados, bebidas e eventos. Garantimos o melhor negócio: 
-              <span className="block mt-2 py-1 px-3 text-lg font-bold text-[#0a2463] bg-white/30 rounded-md border border-[#29ABE2]/30 inline-flex items-center transform hover:scale-105 transition-all">
-                <Snowflake className="size-4 mr-2" /> COBRIMOS QUALQUER ORÇAMENTO
-              </span>
-              <span className="block mt-2 text-md italic">(RETIRADA NO LOCAL OU ENTREGA NA SUA PORTA)</span>
-            </p>
-
-            {/* Action buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 z-50">
-              <Button
-                size="lg"
-                className="bg-white text-[#29ABE2] hover:bg-white/90 font-medium rounded-md px-8 group"
-                asChild
-              >
-                <Link href="https://wa.me/5585991124238">
-                  Solicite seu Orçamento via WhatsApp
-                  <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#0a2463] text-[#0a2463] bg-transparent border hover:bg-[#0a2463] hover:text-white font-medium rounded-md px-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg group"
-                asChild
-              >
-                <Link href="#produto">
-                  Conheça as Vantagens do Gelo em Escama
-                  <ArrowRight className="ml-2 size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                </Link>
-              </Button>
+                  <Link href="https://wa.me/5585991124238">
+                    Solicite seu Orçamento via WhatsApp
+                    <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#0a2463] text-[#0a2463] bg-transparent border hover:bg-[#0a2463] hover:text-white font-medium rounded-md px-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg group"
+                  asChild
+                >
+                  <Link href="#produto">
+                    Conheça as Vantagens do Gelo em Escama
+                    <ArrowRight className="ml-2 size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-col items-center mt-32 sm:mt-48">
-              <span className="text-[#0a2463] text-sm tracking-widest uppercase font-medium block text-center">
-                Explore
-              </span>
-              <ArrowDown className="text-[#0a2463] animate-bounce size-5 mx-auto mt-1" />
+          </div>
+
+          {/* Right side - Truck image */}
+          <div className="flex-1 flex justify-center items-center lg:justify-end z-30">
+            <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
+              <Image
+                src="/caminhao-removebg-preview.png"
+                alt="Caminhão de entrega de gelo"
+                width={600}
+                height={600}
+                className="w-full h-auto drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                priority
+              />
             </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="flex flex-col items-center">
+            <span className="text-[#0a2463] text-sm tracking-widest uppercase font-medium block text-center">
+              Explore
+            </span>
+            <ArrowDown className="text-[#0a2463] animate-bounce size-5 mx-auto mt-1" />
           </div>
         </div>
       </div>

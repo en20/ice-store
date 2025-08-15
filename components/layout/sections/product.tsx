@@ -133,86 +133,55 @@ export const ProductSection = () => {
           </div>
         </div>
 
-        {/* Commitment section with image gallery */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Left side - Images */}
-          <div className="lg:col-span-2 grid grid-cols-2 gap-4">
-            <div className="relative h-40 md:h-48 rounded-lg overflow-hidden">
-              <Image 
-                src="/maquina.png"
-                alt="Exposição de pescados em gelo" 
-                fill 
-                className="object-contain" 
-              />
+        {/* Commitment section */}
+        <div className="bg-gray-800/50 rounded-2xl p-8 max-w-4xl mx-auto">
+          <h4 className="text-2xl font-bold mb-6 text-white text-center">
+            Nosso Compromisso
+          </h4>
+          
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">1</div>
+              <div>
+                <h5 className="text-lg font-semibold mb-1 text-white">Qualidade e Pureza Asseguradas</h5>
+                <p className="text-gray-300">
+                  Todo nosso gelo é produzido com água filtrada e seguindo rigorosos padrões de higiene.
+                </p>
+              </div>
             </div>
-            <div className="relative h-40 md:h-48 rounded-lg overflow-hidden">
-              <Image 
-                src="/caminhao.jpeg"
-                alt="Bebidas resfriadas em balde de gelo" 
-                fill 
-                className="object-contain" 
-              />
+            
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">2</div>
+              <div>
+                <h5 className="text-lg font-semibold mb-1 text-white">O Melhor Preço Garantido</h5>
+                <p className="text-gray-300">
+                  <span className="block text-lg font-extrabold text-[#29ABE2] uppercase my-2 py-1 px-2 bg-[#29ABE2]/10 rounded border-l-4 border-[#29ABE2]">COBRIMOS QUALQUER ORÇAMENTO</span> 
+                  Traga o orçamento comprovado e faremos o melhor preço para você.
+                </p>
+              </div>
             </div>
-            <div className="relative h-40 md:h-48 rounded-lg overflow-hidden col-span-2">
-              <Image 
-                src="/estoque.png"
-                alt="Variedade de peixes conservados em gelo" 
-                fill 
-                className="object-cover" 
-              />
+            
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">3</div>
+              <div>
+                <h5 className="text-lg font-semibold mb-1 text-white">Entrega Rápida</h5>
+                <p className="text-gray-300">
+                  Levamos nosso gelo de qualidade até você
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Right side - Commitment */}
-          <div className="lg:col-span-3 bg-gray-800/50 rounded-2xl p-8">
-            <h4 className="text-2xl font-bold mb-6 text-white">
-              Nosso Compromisso
-            </h4>
-            
-            <div className="space-y-6">
-              <div className="flex gap-4 items-start">
-                <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">1</div>
-                <div>
-                  <h5 className="text-lg font-semibold mb-1 text-white">Qualidade e Pureza Asseguradas</h5>
-                  <p className="text-gray-300">
-                    Todo nosso gelo é produzido com água filtrada e seguindo rigorosos padrões de higiene.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4 items-start">
-                <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">2</div>
-                <div>
-                  <h5 className="text-lg font-semibold mb-1 text-white">O Melhor Preço Garantido</h5>
-                  <p className="text-gray-300">
-                    <span className="block text-lg font-extrabold text-[#29ABE2] uppercase my-2 py-1 px-2 bg-[#29ABE2]/10 rounded border-l-4 border-[#29ABE2]">COBRIMOS QUALQUER ORÇAMENTO</span> 
-                    Traga o orçamento comprovado e faremos o melhor preço para você.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4 items-start">
-                <div className="flex-shrink-0 w-10 h-10 bg-[#29ABE2] rounded-full flex items-center justify-center text-white font-bold">3</div>
-                <div>
-                  <h5 className="text-lg font-semibold mb-1 text-white">Entrega Rápida</h5>
-                  <p className="text-gray-300">
-                    Levamos nosso gelo de qualidade até você
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8 pl-14">
-              <Button 
-                variant="outline" 
-                className="border-[#0A6A9C] text-[#29ABE2] hover:bg-[#0A6A9C] hover:text-white"
-                asChild
-              >
-                <Link href="https://wa.me/5585991124238?text=Olá! Gostaria de informações sobre o Gelo em Escama da Pescgelo">
-                  Mais Informações via WhatsApp
-                </Link>
-              </Button>
-            </div>
+          
+          <div className="mt-8 text-center">
+            <Button 
+              variant="outline" 
+              className="border-[#0A6A9C] text-[#29ABE2] hover:bg-[#0A6A9C] hover:text-white"
+              asChild
+            >
+              <Link href="https://wa.me/5585991124238?text=Olá! Gostaria de informações sobre o Gelo em Escama da Pescgelo">
+                Mais Informações via WhatsApp
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
