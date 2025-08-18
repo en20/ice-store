@@ -29,8 +29,8 @@ const FAQList: FAQProps[] = [
     value: "item-3",
   },
   {
-    question: "Qual o horário para retirada?",
-    answer: "Estamos abertos para retirada de Segunda a Sexta, das 08:00 às 18:00, e aos Sábados, das 08:00 às 12:00. Domingos somos fechados.",
+    question: "Qual o horário para retirada e entrega?",
+    answer: "Estamos abertos para retirada de Segunda a Sexta, das 08:00 às 18:00, e aos Sábados, das 08:00 às 12:00. Domingos somos fechados. Para entrega, consulte disponibilidade para sua região.",
     value: "item-4",
   },
   {

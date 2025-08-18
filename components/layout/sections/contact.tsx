@@ -84,7 +84,7 @@ export const ContactSection = () => {
           <div className="w-24 h-1 bg-[#29ABE2] mx-auto rounded-full mb-6"></div>
           <p className="text-white max-w-2xl mx-auto">
             Solicite um orçamento ou tire suas dúvidas sobre nosso gelo em escama.
-            <span className="block mt-2 font-bold text-[#29ABE2]">RETIRADA NO LOCAL OU ENTREGA RÁPIDA, VOCÊ QUE ESCOLHE!</span>
+            <span className="block mt-2 font-bold text-[#29ABE2]">RETIRADA NO LOCAL OU ENTREGA, VOCÊ QUE ESCOLHE!</span>
           </p>
         </div>
 
@@ -204,7 +204,7 @@ export const ContactSection = () => {
               ></iframe>
             </div>
             
-            {/* Reminder about pickup only */}
+            {/* Reminder about service options */}
             <Card className="bg-[#29ABE2]/5 border-[#29ABE2]/20">
               <CardHeader className="pb-2">
                 <div className="flex items-center space-x-2">
@@ -214,8 +214,8 @@ export const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-white">
-                  Nosso atendimento é <span className="font-bold">EXCLUSIVO PARA RETIRADA NO LOCAL</span>. 
-                  Oferecemos o melhor preço da região para gelo em escama. Traga seu orçamento: 
+                  Oferecemos <span className="font-bold">RETIRADA NO LOCAL OU ENTREGA</span> para sua comodidade. 
+                  O melhor preço da região para gelo em escama. Traga seu orçamento: 
                   <span className="font-bold text-[#29ABE2]"> COBRIMOS QUALQUER PREÇO!</span>
                 </p>
               </CardContent>
@@ -236,7 +236,7 @@ export const ContactSection = () => {
             <p className="text-sm text-white">Perfeito para conservação de alimentos</p>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-[#29ABE2] mb-1">Retirada rápida</div>
+            <div className="text-xl font-bold text-[#29ABE2] mb-1">Retirada ou entrega</div>
             <p className="text-sm text-white">Atendimento ágil e eficiente</p>
           </div>
         </div>

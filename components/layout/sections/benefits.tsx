@@ -42,7 +42,7 @@ const benefitList: BenefitsProps[] = [
     icon: "MapPin",
     title: "Conveniência Total",
     description:
-      "Retirada no local ou entrega rápida em Maracanaú e região",
+      "Retirada no local ou entrega em Maracanaú e região",
     color: "bg-purple-50 dark:bg-purple-900/10",
   },
 ];
